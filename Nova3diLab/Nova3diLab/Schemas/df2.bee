@@ -1,0 +1,9 @@
+schema {
+	fileType		: byte[3];
+	version         : byte;
+	objectName      : byte[8];
+	unknown1        : byte[8];
+	lodCount        : int;
+	lodStuff        : byte[16];
+	renderFunction  : byte[4];
+}
