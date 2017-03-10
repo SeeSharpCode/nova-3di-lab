@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=5.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.5.2.0\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="BeeSchema, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>lib\BeeSchema.dll</HintPath>
@@ -44,9 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ModelFileParser.cs" />
+    <Compile Include="Model\Bitmap\BitmapData.cs" />
+    <Compile Include="Model\Bitmap\BitmapHeader.cs" />
+    <Compile Include="Model\Bitmap\BitmapPalette.cs" />
+    <Compile Include="Parser\ModelFileParser.cs" />
     <Compile Include="Model\GeneralHeader.cs" />
-    <Compile Include="Model\Nova3dModel.cs" />
+    <Compile Include="Model\Model3D.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -54,6 +60,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Schemas\df2.bee" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
