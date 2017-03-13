@@ -7,11 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nova3diLab", "Nova3diLab\No
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nova3diLab.ConsoleApp", "Nova3diLab.ConsoleApp\Nova3diLab.ConsoleApp.csproj", "{0EDEC542-041C-4FAC-965D-4D89EF4AC58D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample-files", "sample-files", "{DCC98D8A-507C-4CE2-8F02-03DA419E2C67}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\..\..\..\Downloads\LAPTOPxps.3DI = ..\..\..\..\..\Downloads\LAPTOPxps.3DI
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

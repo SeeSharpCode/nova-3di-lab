@@ -50,6 +50,7 @@
     <Compile Include="Model\Bitmap\BitmapData.cs" />
     <Compile Include="Model\Bitmap\BitmapHeader.cs" />
     <Compile Include="Model\Bitmap\BitmapPalette.cs" />
+    <Compile Include="Model\IModelPart.cs" />
     <Compile Include="Parser\ModelFileParser.cs" />
     <Compile Include="Model\GeneralHeader.cs" />
     <Compile Include="Model\Model3D.cs" />

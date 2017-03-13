@@ -1,4 +1,5 @@
-﻿using Nova3diLab.Parser;
+﻿using Nova3diLab.Model;
+using Nova3diLab.Parser;
 using System;
 
 namespace Nova3diLab.ConsoleApp
@@ -9,7 +10,11 @@ namespace Nova3diLab.ConsoleApp
         {
             ModelFileParser parser = new ModelFileParser("sample-files/laptop.3di");
 
-            Console.WriteLine(parser.Parse());
+            Model3D model = parser.Parse();
+
+
+
+            Console.WriteLine(model.GeneralHeader.Name);
             Console.Read();
         }
     }

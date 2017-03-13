@@ -1,9 +1,24 @@
+struct GeneralHeader {
+	FileType		: byte[3];
+	Version         : byte;
+	Name            : byte[8];
+	Unknown1        : byte[8];
+	LodCount        : int;
+	Lod4Distance    : int;
+	Lod3Distance    : int;
+	Lod2Distance    : int;
+	Lod1Distance    : int;
+	RenderFunction1 : byte[4];
+	RenderFunction2 : byte[4];
+	RenderFunction3 : byte[4];
+	RenderFunction4 : byte[4];
+	Unknown2        : byte[40];
+	SphereRadius    : int;
+	CircleRadius    : int;
+	Unknown3        : byte[20];
+	BitmapCount     : int;
+}
+
 schema {
-	fileType		: byte[3];
-	version         : byte;
-	objectName      : byte[8];
-	unknown1        : byte[8];
-	lodCount        : int;
-	lodStuff        : byte[16];
-	renderFunction  : byte[4];
+	GeneralHeader: GeneralHeader;
 }
