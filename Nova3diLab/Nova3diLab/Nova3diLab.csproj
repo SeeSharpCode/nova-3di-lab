@@ -47,10 +47,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Bitmap\BitmapData.cs" />
+    <Compile Include="Model\Bitmap\ModelBitmap.cs" />
     <Compile Include="Model\Bitmap\BitmapHeader.cs" />
-    <Compile Include="Model\Bitmap\BitmapPalette.cs" />
-    <Compile Include="Model\IModelPart.cs" />
+    <Compile Include="Model\Lod\CollisionPlaneVector.cs" />
+    <Compile Include="Model\Lod\CollisionVolume.cs" />
+    <Compile Include="Model\Lod\Face.cs" />
+    <Compile Include="Model\Lod\LodHeader.cs" />
+    <Compile Include="Model\Lod\Material.cs" />
+    <Compile Include="Model\Lod\ModelLod.cs" />
+    <Compile Include="Model\Lod\Normal.cs" />
+    <Compile Include="Model\Lod\PartAnimation.cs" />
+    <Compile Include="Model\Lod\SubObject.cs" />
+    <Compile Include="Model\Lod\Vertex.cs" />
     <Compile Include="Parser\ModelFileParser.cs" />
     <Compile Include="Model\GeneralHeader.cs" />
     <Compile Include="Model\Model3D.cs" />

@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.4
+VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nova3diLab", "Nova3diLab\Nova3diLab.csproj", "{A183AD1D-C0C1-4F4F-B97D-874B611F2047}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nova3diLab.ConsoleApp", "Nova3diLab.ConsoleApp\Nova3diLab.ConsoleApp.csproj", "{0EDEC542-041C-4FAC-965D-4D89EF4AC58D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nova3diLab.App", "Nova3diLab.App\Nova3diLab.App.csproj", "{1FD65D6F-0CC8-4D0C-B60C-29FE1C06063F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{0EDEC542-041C-4FAC-965D-4D89EF4AC58D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0EDEC542-041C-4FAC-965D-4D89EF4AC58D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0EDEC542-041C-4FAC-965D-4D89EF4AC58D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FD65D6F-0CC8-4D0C-B60C-29FE1C06063F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FD65D6F-0CC8-4D0C-B60C-29FE1C06063F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FD65D6F-0CC8-4D0C-B60C-29FE1C06063F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FD65D6F-0CC8-4D0C-B60C-29FE1C06063F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

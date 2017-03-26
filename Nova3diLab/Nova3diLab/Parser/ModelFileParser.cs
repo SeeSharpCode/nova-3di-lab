@@ -82,7 +82,7 @@ namespace Nova3diLab.Parser
         private void ConfigureMoreMapping()
         {
             Mapper.Initialize(config => {
-                IMappingExpression<ResultCollection, Model3D> mappingExpression = config.CreateMap()
+                IMappingExpression<ResultCollection, Model3D> mappingExpression = config.CreateMap<ResultCollection, Model3D>();
             });
         }
 
