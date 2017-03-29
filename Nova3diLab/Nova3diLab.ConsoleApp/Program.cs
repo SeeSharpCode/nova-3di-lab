@@ -11,10 +11,9 @@ namespace Nova3diLab.ConsoleApp
             ModelFileParser parser = new ModelFileParser("sample-files/laptop.3di");
 
             Model3D model = parser.Parse();
-
-
-
+            
             Console.WriteLine(model.GeneralHeader.Name);
+            Console.WriteLine(model.GeneralHeader.Name.Length);
             Console.Read();
         }
     }
