@@ -14,8 +14,6 @@ namespace Nova3diLab.ConsoleApp
 
             Model3D.FromObj(@"D:\Games\Novalogic\Delta Force 2\Tools\Modding\3di\Cube\box object.obj", "test");
 
-            Console.WriteLine(model.GeneralHeader.Name);
-            Console.WriteLine(model.GeneralHeader.Name.Length);
             Console.Read();
         }
     }
