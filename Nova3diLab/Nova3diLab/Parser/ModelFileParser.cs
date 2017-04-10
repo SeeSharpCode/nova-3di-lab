@@ -1,4 +1,4 @@
-﻿using BeeSchema;
+using BeeSchema;
 using Nova3diLab.Model;
 using System.IO;
 using System.Reflection;
