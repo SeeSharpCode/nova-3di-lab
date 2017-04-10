@@ -12,7 +12,7 @@ namespace Nova3diLab.ConsoleApp
 
             Model3D model = parser.Parse();
 
-
+            Model3D.FromObj(@"D:\Games\Novalogic\Delta Force 2\Tools\Modding\3di\Cube\box object.obj", "test");
 
             Console.WriteLine(model.GeneralHeader.Name);
             Console.Read();

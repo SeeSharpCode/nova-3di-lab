@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Nova3diLab.Model.Lod
 {
@@ -14,17 +16,45 @@ namespace Nova3diLab.Model.Lod
         public List<CollisionVolume> CollisionVolumes { get; set; }
         public List<Material> Materials { get; set; }
 
-        public ModelLod()
+        internal double GetXMin()
         {
-            Header = new LodHeader();
-            Vertices = new List<Vertex>();
-            Normals = new List<Normal>();
-            Faces = new List<Face>();
-            SubObjects = new List<SubObject>();
-            PartAnimations = new List<PartAnimation>();
-            CollisionPlaneVectors = new List<CollisionPlaneVector>();
-            CollisionVolumes = new List<CollisionVolume>();
-            Materials = new List<Material>();
+            return Math.Round((double)Vertices.Select(vertex => (short)vertex.X).Min() / 256, 3);
+        }
+
+        internal double GetYMin()
+        {
+            return Math.Round((double)Vertices.Select(vertex => (short)vertex.Y).Min() / 256, 3);
+        }
+
+        internal double GetZMin()
+        {
+            return Math.Round((double)Vertices.Select(vertex => (short)vertex.Z).Min() / 256, 3);
+        }
+
+        internal double GetXMax()
+        {
+            return Math.Round((double)Vertices.Select(vertex => (short)vertex.X).Max() / 256, 3);
+        }
+
+        internal double GetYMax()
+        {
+            return Math.Round((double)Vertices.Select(vertex => (short)vertex.Y).Max() / 256, 3);
+        }
+
+        internal double GetZMax()
+        {
+            return Math.Round((double)Vertices.Select(vertex => (short)vertex.Z).Max() / 256, 3);
+        }
+
+        internal int CalcuateRadius()
+        {
+            double xMaxAbsolute = Math.Max(Math.Abs(GetXMin()), Math.Abs(GetXMax()));
+            double yMaxAbsolute = Math.Max(Math.Abs(GetYMin()), Math.Abs(GetYMax()));
+            double zMaxAbsolute = Math.Max(Math.Abs(GetZMin()), Math.Abs(GetZMax()));
+
+            double maxSumSquared = Math.Pow(xMaxAbsolute, 2) + Math.Pow(yMaxAbsolute, 2) + Math.Pow(zMaxAbsolute, 2);
+
+            return (int)(Math.Sqrt(maxSumSquared) * 65536);
         }
     }
 }
