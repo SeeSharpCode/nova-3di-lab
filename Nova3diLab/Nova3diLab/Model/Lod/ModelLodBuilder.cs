@@ -10,5 +10,10 @@ namespace Nova3diLab.Model.Lod
         {
             _scene = scene;
         }
+
+        internal void BuildVertices()
+        {
+
+        }
     }
 }

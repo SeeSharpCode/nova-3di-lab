@@ -49,11 +49,10 @@ namespace Nova3diLab.Model
             _model.Lods = new List<ModelLod>
             {
                 new ModelLod
-            {
-                Vertices = _scene.Vertices.Select(vertex => Vertex.FromObjVertex(vertex)).Distinct(new VertexComparer()).ToList(),
+                {
+                    Vertices = _scene.Vertices.Select(vertex => Vertex.FromObjVertex(vertex)).Distinct(new VertexComparer()).ToList()
+                }
             };
-
-            return model;
         }
 
         internal Model3D GetResult()
