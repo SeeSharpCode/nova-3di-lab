@@ -4,7 +4,6 @@ using Nova3diLab.Model.Bitmap;
 using Nova3diLab.Model.Lod;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 
 namespace Nova3diLab.Model
 {
@@ -14,29 +13,14 @@ namespace Nova3diLab.Model
         public List<ModelBitmap> Bitmaps { get; set; }
         public List<ModelLod> Lods { get; set; }
 
-        public Model3D(GeneralHeader generalHeader, List<ModelBitmap> bitmaps, List<ModelLod> lods)
-        {
-            GeneralHeader = generalHeader;
-            Bitmaps = bitmaps;
-            Lods = lods;
-        }
-
         public static Model3D FromObj(string objFile, string name)
         {
             Scene obj = FileFormatObj.Load(objFile, false).Model;
 
-            ModelLod lod = new ModelLod()
-            {
-                Vertices = obj.Vertices.Select(vertex => Lod.Vertex.FromObjVertex(vertex)).Distinct(new VertexComparer()).ToList(),
-            };
+            ModelLod lod = ModelLod.FromObj(obj);
+            GeneralHeader generalHeader = GeneralHeader.FromObj(obj, name, lod);
 
-            GeneralHeader generalHeader = new GeneralHeader()
-            {
-                Name = name,
-                LodCount = 1,
-                Radius = lod.CalcuateRadius(),
-                BitmapCount = obj.Materials.Count
-            };
+            
 
             using (BinaryWriter writer = new BinaryWriter(new FileStream($"{name}.3di", FileMode.Create)))
             {
@@ -70,7 +54,7 @@ namespace Nova3diLab.Model
                 //writer.Write((ushort)65152);
             }
 
-            return new Model3D(generalHeader, new List<ModelBitmap>(), new List<ModelLod>());
+            return new Model3D();
         }
     }
 }

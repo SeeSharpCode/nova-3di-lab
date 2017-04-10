@@ -2,8 +2,6 @@
 {
     public class GeneralHeader
     {
-        internal GeneralHeader() { }
-
         public string Name { get; set; }
 
         public int LodCount { get; set; }
