@@ -67,10 +67,6 @@
     <Compile Include="Utility\StringExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="lib\BeeSchema.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Schemas\df2.bee" />
     <Compile Include="Utility\BinaryReaderExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
