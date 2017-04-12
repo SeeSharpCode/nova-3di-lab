@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Nova3diLab.Model.Lod
+﻿namespace Nova3diLab.Model.Lod
 {
     public class Vertex
     {
@@ -13,15 +11,6 @@ namespace Nova3diLab.Model.Lod
             X = x;
             Y = y;
             Z = z;
-        }
-
-        internal static Vertex FromObjVertex(FileFormatWavefront.Model.Vertex vertex)
-        {
-            ushort x = (ushort)Math.Round(vertex.x * 256);
-            ushort y = (ushort)Math.Round(vertex.z * -256);
-            ushort z = (ushort)Math.Round(vertex.y * 256);
-
-            return new Model.Lod.Vertex(x, y, z);
         }
     }
 }

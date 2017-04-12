@@ -1,9 +1,10 @@
-﻿using FileFormatWavefront;
+﻿using AutoMapper;
+using FileFormatWavefront;
 using FileFormatWavefront.Model;
 using Nova3diLab.Model.Bitmap;
 using Nova3diLab.Model.Lod;
 using System.Collections.Generic;
-using System.IO;
+using System.Linq;
 
 namespace Nova3diLab.Model
 {
@@ -13,48 +14,50 @@ namespace Nova3diLab.Model
         public List<ModelBitmap> Bitmaps { get; set; }
         public List<ModelLod> Lods { get; set; }
 
-        public static Model3D FromObj(string objFile, string name)
+        public static Model3D FromWavefrontObj(string objFile, string name)
         {
+            ModelMappingConfiguration.Configure();
+
             Scene obj = FileFormatObj.Load(objFile, false).Model;
 
-            ModelLod lod = ModelLod.FromObj(obj);
-            GeneralHeader generalHeader = GeneralHeader.FromObj(obj, name, lod);
-
-            
-
-            using (BinaryWriter writer = new BinaryWriter(new FileStream($"{name}.3di", FileMode.Create)))
+            ModelLod lod = new ModelLod
             {
-                writer.Write(generalHeader.Radius);
-                //// versioning
-                //writer.Write("3DI".ToCharArray());
-                //writer.Write((byte)8);
-                //writer.Write(name.ToByteArray(8)); // name
-                //writer.Write(0x000000010012FCD0); // gap
-                //writer.Write(1); // LOD count
+                Vertices = obj.Vertices.Select(vertex => Mapper.Map<Lod.Vertex>(vertex)).Distinct(new VertexComparer()).ToList()
+            };
 
-                //// LOD distances
-                //writer.Write(0);
-                //writer.Write(0);
-                //writer.Write(0);
-                //writer.Write(0);
+            return new Model3D { Lods = new List<ModelLod> { lod } };
 
-                //// render codes
-                //writer.Write("crng".ToCharArray());
-                //writer.Write("crng".ToCharArray());
-                //writer.Write("crng".ToCharArray());
-                //writer.Write("crng".ToCharArray());
+            //using (BinaryWriter writer = new BinaryWriter(new FileStream($"{name}.3di", FileMode.Create)))
+            //{
+            //    //writer.Write(generalHeader.Radius);
+            //    //// versioning
+            //    //writer.Write("3DI".ToCharArray());
+            //    //writer.Write((byte)8);
+            //    //writer.Write(name.ToByteArray(8)); // name
+            //    //writer.Write(0x000000010012FCD0); // gap
+            //    //writer.Write(1); // LOD count
 
-                //// gaps
-                //writer.Write((Int64)0);
-                //writer.Write((Int64)0);
-                //writer.Write((Int64)0);
-                //writer.Write((Int64)0);
-                //writer.Write((Int64)0);
+            //    //// LOD distances
+            //    //writer.Write(0);
+            //    //writer.Write(0);
+            //    //writer.Write(0);
+            //    //writer.Write(0);
 
-                //writer.Write((ushort)65152);
-            }
+            //    //// render codes
+            //    //writer.Write("crng".ToCharArray());
+            //    //writer.Write("crng".ToCharArray());
+            //    //writer.Write("crng".ToCharArray());
+            //    //writer.Write("crng".ToCharArray());
 
-            return new Model3D();
+            //    //// gaps
+            //    //writer.Write((Int64)0);
+            //    //writer.Write((Int64)0);
+            //    //writer.Write((Int64)0);
+            //    //writer.Write((Int64)0);
+            //    //writer.Write((Int64)0);
+
+            //    //writer.Write((ushort)65152);
+            //}
         }
     }
 }

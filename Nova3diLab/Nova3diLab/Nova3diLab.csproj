@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.0.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.0.2\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="FileFormatWavefront, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FileFormatWavefront.1.0.3.0\lib\net40\FileFormatWavefront.dll</HintPath>
     </Reference>
@@ -58,6 +61,7 @@
     <Compile Include="Model\Lod\Vertex.cs" />
     <Compile Include="Model\Lod\VertexComparer.cs" />
     <Compile Include="Model\ModelBuilder.cs" />
+    <Compile Include="Model\ModelMappingConfiguration.cs" />
     <Compile Include="Parser\ModelFileParser.cs" />
     <Compile Include="Model\GeneralHeader.cs" />
     <Compile Include="Model\Model3D.cs" />

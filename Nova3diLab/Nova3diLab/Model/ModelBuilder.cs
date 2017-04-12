@@ -10,7 +10,7 @@ namespace Nova3diLab.Model
     {
         internal static void Construct(ModelBuilder builder)
         {
-            builder.BuildLods();
+            //builder.BuildLods();
             builder.BuildGeneralHeader();
             builder.BuildBitmaps();
         }
@@ -44,16 +44,16 @@ namespace Nova3diLab.Model
             };
         }
 
-        internal void BuildLods()
-        {
-            _model.Lods = new List<ModelLod>
-            {
-                new ModelLod
-                {
-                    Vertices = _scene.Vertices.Select(vertex => Vertex.FromObjVertex(vertex)).Distinct(new VertexComparer()).ToList()
-                }
-            };
-        }
+        //internal void BuildLods()
+        //{
+        //    _model.Lods = new List<ModelLod>
+        //    {
+        //        new ModelLod
+        //        {
+        //            Vertices = _scene.Vertices.Select(vertex => Vertex.FromObjVertex(vertex)).Distinct(new VertexComparer()).ToList()
+        //        }
+        //    };
+        //}
 
         internal Model3D GetResult()
         {

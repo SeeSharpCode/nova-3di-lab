@@ -31,10 +31,5 @@ namespace Nova3diLab.Model.Lod
         public int ZMax { get; set; }
 
         public int MaterialIndex { get; set; }
-
-        internal static Face FromObj(FileFormatWavefront.Model.Face Face face)
-        {
-
-        }
     }
 }
