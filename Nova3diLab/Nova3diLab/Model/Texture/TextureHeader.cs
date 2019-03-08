@@ -1,6 +1,6 @@
-﻿namespace Nova3diLab.Model.Bitmap
+﻿namespace Nova3diLab.Model.Texture
 {
-    public class BitmapHeader
+    public class TextureHeader
     {
         public string Name { get; set; }
         public string TransparentName { get; set; }

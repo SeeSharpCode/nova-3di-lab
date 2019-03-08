@@ -1,6 +1,7 @@
 ﻿using Nova3diLab.Model;
-using Nova3diLab.ModelNew;
+using Nova3diLab.Model.Texture;
 using System;
+using System.Collections.Generic;
 
 namespace Nova3diLab.ConsoleApp
 {
@@ -8,13 +9,24 @@ namespace Nova3diLab.ConsoleApp
     {
         static void Main(string[] args)
         {
-            //Model3D model = Model3D.FromWavefrontObj(@"D:\Games\Novalogic\Delta Force 2\Tools\Modding\3di\Cube\box object.obj", "test");
+            Console.WriteLine("Writing file...");
 
-            GeneralHeader2 generalHeader2 = new GeneralHeader2();
-            generalHeader2.Signature = FileVersion.V8;
-            generalHeader2.Name = "aaa";
-            generalHeader2.Write();
-            
+            GeneralHeader generalHeader = new GeneralHeader
+            {
+                Name = "box",
+                LodCount = 1,
+                Sphere = 0x0001BB67,
+                Radius = 0x0001BB67,
+                TextureCount = 1,
+            };
+
+            DF2Model model = new DF2Model();
+            model.GeneralHeader = generalHeader;
+           // model.Textures = new DF2Texture[] { new DF2Texture() };
+            model.SaveToFile(@"G:\Games\Novalogic\Delta Force 2\Tools\Modding\3di\Box (Tutorial)\test.3di");
+
+            Console.WriteLine("Finished!");
+
             Console.Read();
         }
     }

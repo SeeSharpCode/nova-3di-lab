@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -46,9 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ModelNew\GeneralHeader2.cs" />
-    <Compile Include="Model\Bitmap\ModelBitmap.cs" />
-    <Compile Include="Model\Bitmap\BitmapHeader.cs" />
+    <Compile Include="Model\Texture\DF2Texture.cs" />
+    <Compile Include="Model\Texture\TextureHeader.cs" />
     <Compile Include="Model\Lod\CollisionPlaneVector.cs" />
     <Compile Include="Model\Lod\CollisionVolume.cs" />
     <Compile Include="Model\Lod\Face.cs" />
@@ -61,11 +61,8 @@
     <Compile Include="Model\Lod\SubObject.cs" />
     <Compile Include="Model\Lod\Vertex.cs" />
     <Compile Include="Model\Lod\VertexComparer.cs" />
-    <Compile Include="Model\ModelBuilder.cs" />
-    <Compile Include="Model\ModelMappingConfiguration.cs" />
-    <Compile Include="Parser\ModelFileParser.cs" />
     <Compile Include="Model\GeneralHeader.cs" />
-    <Compile Include="Model\Model3D.cs" />
+    <Compile Include="Model\DF2Model.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\StringExtensions.cs" />
   </ItemGroup>
@@ -74,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="README.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
