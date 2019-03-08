@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ModelNew\GeneralHeader2.cs" />
     <Compile Include="Model\Bitmap\ModelBitmap.cs" />
     <Compile Include="Model\Bitmap\BitmapHeader.cs" />
     <Compile Include="Model\Lod\CollisionPlaneVector.cs" />

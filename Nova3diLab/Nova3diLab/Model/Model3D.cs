@@ -20,6 +20,13 @@ namespace Nova3diLab.Model
 
             Scene obj = FileFormatObj.Load(objFile, false).Model;
 
+            List<Lod.Vertex> vertices = new List<Lod.Vertex>();
+
+            foreach (FileFormatWavefront.Model.Vertex vertex in obj.Vertices)
+            {
+                Lod.Vertex vertex1 = Mapper.Map<Lod.Vertex>(vertex);
+            }
+
             ModelLod lod = new ModelLod
             {
                 Vertices = obj.Vertices.Select(vertex => Mapper.Map<Lod.Vertex>(vertex)).Distinct(new VertexComparer()).ToList()
