@@ -62,6 +62,7 @@
     <None Include="packages.config" />
     <None Include="Resources\general-header.3di" />
     <None Include="Resources\texture-header.3di" />
+    <None Include="Resources\texture.3di" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Nova3diLab\Nova3diLab.csproj">

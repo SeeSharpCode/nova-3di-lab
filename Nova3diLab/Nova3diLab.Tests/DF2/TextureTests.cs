@@ -18,8 +18,8 @@ namespace Nova3diLab.DF2.Tests
                 Height = 512,
             };
 
-            byte[] expected = Nova3diLab.Tests.Properties.Resources.texture_header;
-            Assert.IsTrue(expected.SequenceEqual(texture.GetBytes()));
+            byte[] expected = Nova3diLab.Tests.Properties.Resources.texture;
+            Assert.IsTrue(expected.SequenceEqual(texture.Serialize()));
         }
     }
 }

@@ -3,7 +3,7 @@ using System.IO;
 
 namespace Nova3diLab.DF2
 {
-    public class GeneralHeader
+    public class GeneralHeader : IBinaryFileStructure
     {
         public string Name { get; set; }
         public int LodCount { get; set; }
@@ -15,8 +15,8 @@ namespace Nova3diLab.DF2
         public int Sphere { get; set; }
         public int Radius { get; set; }
         public int TextureCount { get; set; }
-
-        public byte[] GetBytes()
+        
+        public byte[] Serialize()
         {
             using (MemoryStream buffer = new MemoryStream())
             using (BinaryWriter writer = new BinaryWriter(buffer))
@@ -46,6 +46,11 @@ namespace Nova3diLab.DF2
 
                 return buffer.ToArray();
             }
+        }
+
+        public void Deserialize()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

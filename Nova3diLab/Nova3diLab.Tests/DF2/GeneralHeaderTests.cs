@@ -19,7 +19,7 @@ namespace Nova3diLab.DF2.Tests
             };
 
             byte[] expected = Nova3diLab.Tests.Properties.Resources.general_header;
-            Assert.IsTrue(expected.SequenceEqual(generalHeader.GetBytes()));
+            Assert.IsTrue(expected.SequenceEqual(generalHeader.Serialize()));
         }
     }
 }

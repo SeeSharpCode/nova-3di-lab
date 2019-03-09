@@ -49,20 +49,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DF2\Texture.cs" />
-    <Compile Include="DF2\Lod\CollisionPlaneVector.cs" />
-    <Compile Include="DF2\Lod\CollisionVolume.cs" />
-    <Compile Include="DF2\Lod\Face.cs" />
-    <Compile Include="DF2\Lod\LodHeader.cs" />
-    <Compile Include="DF2\Lod\Material.cs" />
-    <Compile Include="DF2\Lod\ModelLod.cs" />
-    <Compile Include="DF2\Lod\ModelLodBuilder.cs" />
-    <Compile Include="DF2\Lod\Normal.cs" />
-    <Compile Include="DF2\Lod\PartAnimation.cs" />
-    <Compile Include="DF2\Lod\SubObject.cs" />
-    <Compile Include="DF2\Lod\Vertex.cs" />
-    <Compile Include="DF2\Lod\VertexComparer.cs" />
+    <Compile Include="DF2\LOD\CollisionPlaneVector.cs" />
+    <Compile Include="DF2\LOD\CollisionVolume.cs" />
+    <Compile Include="DF2\LOD\Face.cs" />
+    <Compile Include="DF2\LOD\LodHeader.cs" />
+    <Compile Include="DF2\LOD\Material.cs" />
+    <Compile Include="DF2\LOD\ModelLod.cs" />
+    <Compile Include="DF2\LOD\ModelLodBuilder.cs" />
+    <Compile Include="DF2\LOD\Normal.cs" />
+    <Compile Include="DF2\LOD\PartAnimation.cs" />
+    <Compile Include="DF2\LOD\SubObject.cs" />
+    <Compile Include="DF2\LOD\Vertex.cs" />
+    <Compile Include="DF2\LOD\VertexComparer.cs" />
     <Compile Include="DF2\GeneralHeader.cs" />
     <Compile Include="DF2\Model.cs" />
+    <Compile Include="IBinaryFileStructure.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\StringExtensions.cs" />
   </ItemGroup>
