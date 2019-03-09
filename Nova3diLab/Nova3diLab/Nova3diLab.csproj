@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Nova3diLab</RootNamespace>
     <AssemblyName>Nova3diLab</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -47,22 +48,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Texture\DF2Texture.cs" />
-    <Compile Include="Model\Texture\TextureHeader.cs" />
-    <Compile Include="Model\Lod\CollisionPlaneVector.cs" />
-    <Compile Include="Model\Lod\CollisionVolume.cs" />
-    <Compile Include="Model\Lod\Face.cs" />
-    <Compile Include="Model\Lod\LodHeader.cs" />
-    <Compile Include="Model\Lod\Material.cs" />
-    <Compile Include="Model\Lod\ModelLod.cs" />
-    <Compile Include="Model\Lod\ModelLodBuilder.cs" />
-    <Compile Include="Model\Lod\Normal.cs" />
-    <Compile Include="Model\Lod\PartAnimation.cs" />
-    <Compile Include="Model\Lod\SubObject.cs" />
-    <Compile Include="Model\Lod\Vertex.cs" />
-    <Compile Include="Model\Lod\VertexComparer.cs" />
-    <Compile Include="Model\GeneralHeader.cs" />
-    <Compile Include="Model\DF2Model.cs" />
+    <Compile Include="DF2\Texture.cs" />
+    <Compile Include="DF2\Lod\CollisionPlaneVector.cs" />
+    <Compile Include="DF2\Lod\CollisionVolume.cs" />
+    <Compile Include="DF2\Lod\Face.cs" />
+    <Compile Include="DF2\Lod\LodHeader.cs" />
+    <Compile Include="DF2\Lod\Material.cs" />
+    <Compile Include="DF2\Lod\ModelLod.cs" />
+    <Compile Include="DF2\Lod\ModelLodBuilder.cs" />
+    <Compile Include="DF2\Lod\Normal.cs" />
+    <Compile Include="DF2\Lod\PartAnimation.cs" />
+    <Compile Include="DF2\Lod\SubObject.cs" />
+    <Compile Include="DF2\Lod\Vertex.cs" />
+    <Compile Include="DF2\Lod\VertexComparer.cs" />
+    <Compile Include="DF2\GeneralHeader.cs" />
+    <Compile Include="DF2\Model.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\StringExtensions.cs" />
   </ItemGroup>

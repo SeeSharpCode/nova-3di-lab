@@ -5,9 +5,7 @@ VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nova3diLab", "Nova3diLab\Nova3diLab.csproj", "{A183AD1D-C0C1-4F4F-B97D-874B611F2047}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nova3diLab.ConsoleApp", "Nova3diLab.ConsoleApp\Nova3diLab.ConsoleApp.csproj", "{0EDEC542-041C-4FAC-965D-4D89EF4AC58D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nova3diLab.App", "Nova3diLab.App\Nova3diLab.App.csproj", "{1FD65D6F-0CC8-4D0C-B60C-29FE1C06063F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nova3diLab.Tests", "Nova3diLab.Tests\Nova3diLab.Tests.csproj", "{515D96D0-FE1F-4905-B8D0-E70B05E35F35}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,16 +17,15 @@ Global
 		{A183AD1D-C0C1-4F4F-B97D-874B611F2047}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A183AD1D-C0C1-4F4F-B97D-874B611F2047}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A183AD1D-C0C1-4F4F-B97D-874B611F2047}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0EDEC542-041C-4FAC-965D-4D89EF4AC58D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0EDEC542-041C-4FAC-965D-4D89EF4AC58D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0EDEC542-041C-4FAC-965D-4D89EF4AC58D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0EDEC542-041C-4FAC-965D-4D89EF4AC58D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1FD65D6F-0CC8-4D0C-B60C-29FE1C06063F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1FD65D6F-0CC8-4D0C-B60C-29FE1C06063F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1FD65D6F-0CC8-4D0C-B60C-29FE1C06063F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1FD65D6F-0CC8-4D0C-B60C-29FE1C06063F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{515D96D0-FE1F-4905-B8D0-E70B05E35F35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{515D96D0-FE1F-4905-B8D0-E70B05E35F35}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{515D96D0-FE1F-4905-B8D0-E70B05E35F35}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{515D96D0-FE1F-4905-B8D0-E70B05E35F35}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {42CCD1B5-4A03-4EDE-8B9A-55CD299330AC}
 	EndGlobalSection
 EndGlobal
