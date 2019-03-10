@@ -73,6 +73,16 @@ namespace Nova3diLab.Tests.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] lod_header {
+            get {
+                object obj = ResourceManager.GetObject("lod_header", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] texture {
             get {
                 object obj = ResourceManager.GetObject("texture", resourceCulture);
