@@ -83,9 +83,29 @@ namespace Nova3diLab.Tests.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] normals {
+            get {
+                object obj = ResourceManager.GetObject("normals", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] texture {
             get {
                 object obj = ResourceManager.GetObject("texture", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] vertices {
+            get {
+                object obj = ResourceManager.GetObject("vertices", resourceCulture);
                 return ((byte[])(obj));
             }
         }

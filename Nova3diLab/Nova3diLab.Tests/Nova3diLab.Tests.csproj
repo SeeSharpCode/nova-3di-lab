@@ -51,6 +51,8 @@
   <ItemGroup>
     <Compile Include="DF2\GeneralHeaderTests.cs" />
     <Compile Include="DF2\LOD\LodHeaderTests.cs" />
+    <Compile Include="DF2\LOD\NormalTests.cs" />
+    <Compile Include="DF2\LOD\VertexTests.cs" />
     <Compile Include="DF2\TextureTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -63,8 +65,10 @@
     <None Include="packages.config" />
     <None Include="Resources\general-header.3di" />
     <None Include="Resources\lod-header.3di" />
+    <None Include="Resources\normals.3di" />
     <None Include="Resources\texture-header.3di" />
     <None Include="Resources\texture.3di" />
+    <None Include="Resources\vertices.3di" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Nova3diLab\Nova3diLab.csproj">

@@ -124,7 +124,13 @@
   <data name="lod_header" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lod-header.3di;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="normals" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\normals.3di;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="texture" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\texture.3di;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="vertices" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vertices.3di;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

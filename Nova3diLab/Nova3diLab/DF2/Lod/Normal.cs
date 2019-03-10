@@ -1,16 +1,39 @@
 ﻿using System;
+using System.IO;
 
 namespace Nova3diLab.Model.Lod
 {
-    public class Normal
+    public class Normal : IBinaryFileStructure
     {
-        public Int16 X { get; set; }
-        public Int16 Y { get; set; }
-        public Int16 Z { get; set; }
+        public short X { get; }
+        public short Y { get; }
+        public short Z { get; }
+        public short W { get; }
 
-        /// <summary>
-        /// Value describing the vector component with the largest absolute value.
-        /// </summary>
-        public Int16 Descriptor { get; set; }
+        public Normal(short x, short y, short z, short w)
+        {
+            X = x;
+            Y = y;
+            Z = z;
+            W = w;
+        }
+
+        public byte[] Serialize()
+        {
+            using (MemoryStream buffer = new MemoryStream())
+            using (BinaryWriter writer = new BinaryWriter(buffer))
+            {
+                writer.Write(X);
+                writer.Write(Y);
+                writer.Write(Z);
+                writer.Write(W);
+                return buffer.ToArray();
+            }
+        }
+
+        public void Deserialize()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
