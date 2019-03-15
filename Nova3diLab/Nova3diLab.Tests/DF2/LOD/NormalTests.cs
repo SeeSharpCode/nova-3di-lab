@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Nova3diLab.Model.Lod;
+using Nova3diLab.Tests.Properties;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -33,8 +34,7 @@ namespace Nova3diLab.Model.Lod.Tests
             };
 
             byte[] normalData = normals.SelectMany(normal => normal.Serialize()).ToArray();
-            byte[] expected = Nova3diLab.Tests.Properties.Resources.normals;
-            Assert.IsTrue(expected.SequenceEqual(normalData));
+            Assert.IsTrue(Resources.normals.SequenceEqual(normalData));
         }
 
         [TestMethod()]

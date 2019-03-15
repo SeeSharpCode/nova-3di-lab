@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Nova3diLab.Utility;
+using System;
 using System.IO;
 
 namespace Nova3diLab.Model.Lod
@@ -8,13 +9,13 @@ namespace Nova3diLab.Model.Lod
         public int Length { get; set; }
         public int SphereRadius { get; set; }
         public int CircleRadius { get; set; }
-        public float ZTotal { get; set; }
-        public float XMin { get; set; }
-        public float XMax { get; set; }
-        public float YMin { get; set; }
-        public float YMax { get; set; }
-        public float ZMin { get; set; }
-        public float ZMax { get; set; }
+        public double ZTotal { get; set; }
+        public double XMin { get; set; }
+        public double XMax { get; set; }
+        public double YMin { get; set; }
+        public double YMax { get; set; }
+        public double ZMin { get; set; }
+        public double ZMax { get; set; }
         public int LoopImageCount { get; set; }
         public int LoopInterval { get; set; }
         public int VertexCount { get; set; }
@@ -36,13 +37,13 @@ namespace Nova3diLab.Model.Lod
                 writer.Write(0);
                 writer.Write(SphereRadius);
                 writer.Write(CircleRadius);
-                WriteFloat(writer, ZTotal);
-                WriteFloat(writer, XMin);
-                WriteFloat(writer, XMax);
-                WriteFloat(writer, YMin);
-                WriteFloat(writer, YMax);
-                WriteFloat(writer, ZMin);
-                WriteFloat(writer, ZMax);
+                writer.Write(ZTotal.ToDF2Bytes());
+                writer.Write(XMin.ToDF2Bytes());
+                writer.Write(XMax.ToDF2Bytes());
+                writer.Write(YMin.ToDF2Bytes());
+                writer.Write(YMax.ToDF2Bytes());
+                writer.Write(ZMin.ToDF2Bytes());
+                writer.Write(ZMax.ToDF2Bytes());
                 writer.Write(LoopImageCount);
                 writer.Write(new byte[20]);
                 writer.Write(LoopInterval);
@@ -69,15 +70,7 @@ namespace Nova3diLab.Model.Lod
 
         public void Deserialize()
         {
-            throw new System.NotImplementedException();
-        }
-
-        // TODO Need to understand why the bytes are structured this way. 
-        // Just accomodating the spreadsheet calculations for now.
-        private static void WriteFloat(BinaryWriter writer, float value)
-        {
-            writer.Write((short)(value - Math.Truncate(value)));
-            writer.Write((short)value);
+            throw new NotImplementedException();
         }
     }
 }

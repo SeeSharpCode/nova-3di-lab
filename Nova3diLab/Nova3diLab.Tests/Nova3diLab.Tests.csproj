@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DF2\GeneralHeaderTests.cs" />
+    <Compile Include="DF2\LOD\FaceTests.cs" />
     <Compile Include="DF2\LOD\LodHeaderTests.cs" />
     <Compile Include="DF2\LOD\NormalTests.cs" />
     <Compile Include="DF2\LOD\VertexTests.cs" />
@@ -60,9 +61,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Utility\NumberExtensionsTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Resources\face1.3di" />
     <None Include="Resources\general-header.3di" />
     <None Include="Resources\lod-header.3di" />
     <None Include="Resources\normals.3di" />

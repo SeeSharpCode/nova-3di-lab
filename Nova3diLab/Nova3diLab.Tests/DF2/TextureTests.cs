@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Nova3diLab.Tests.Properties;
 using System.Linq;
 
 namespace Nova3diLab.DF2.Tests
@@ -17,9 +18,8 @@ namespace Nova3diLab.DF2.Tests
                 Width = 512,
                 Height = 512,
             };
-
-            byte[] expected = Nova3diLab.Tests.Properties.Resources.texture;
-            Assert.IsTrue(expected.SequenceEqual(texture.Serialize()));
+            
+            Assert.IsTrue(Resources.texture.SequenceEqual(texture.Serialize()));
         }
     }
 }

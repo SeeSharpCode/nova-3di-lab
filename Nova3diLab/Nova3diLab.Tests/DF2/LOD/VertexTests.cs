@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Nova3diLab.Tests.Properties;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -23,8 +24,7 @@ namespace Nova3diLab.Model.Lod.Tests
             };
 
             byte[] vertexBytes = vertices.SelectMany(vertex => vertex.Serialize()).ToArray();
-            byte[] expected = Nova3diLab.Tests.Properties.Resources.vertices;
-            Assert.IsTrue(expected.SequenceEqual(vertexBytes));
+            Assert.IsTrue(Resources.vertices.SequenceEqual(vertexBytes));
         }
 
         [TestMethod()]

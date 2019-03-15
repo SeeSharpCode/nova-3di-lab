@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Nova3diLab.Tests.Properties;
 using System.Linq;
 
 namespace Nova3diLab.DF2.Tests
@@ -17,9 +18,8 @@ namespace Nova3diLab.DF2.Tests
                 Radius = 0x0001BB67,
                 TextureCount = 1,
             };
-
-            byte[] expected = Nova3diLab.Tests.Properties.Resources.general_header;
-            Assert.IsTrue(expected.SequenceEqual(generalHeader.Serialize()));
+            
+            Assert.IsTrue(Resources.general_header.SequenceEqual(generalHeader.Serialize()));
         }
     }
 }

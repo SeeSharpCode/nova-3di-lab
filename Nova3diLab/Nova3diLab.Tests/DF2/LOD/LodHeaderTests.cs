@@ -1,4 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Nova3diLab.Tests.Properties;
+using Nova3diLab.Utility;
+using System;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 
 namespace Nova3diLab.Model.Lod.Tests
@@ -14,13 +19,13 @@ namespace Nova3diLab.Model.Lod.Tests
                 Length = 1384,
                 SphereRadius = 0x0001BB67,
                 CircleRadius = 0x0001BB67,
-                ZTotal = 1.000f,
+                ZTotal = 1.000,
                 XMin = 0,
-                XMax = 1.000f,
+                XMax = 1.000,
                 YMin = 0,
-                YMax = 1.000f,
+                YMax = 1.000,
                 ZMin = 0,
-                ZMax = 1.000f,
+                ZMax = 1.000,
                 VertexCount = 8,
                 NormalCount = 12,
                 FaceCount = 12,
@@ -31,8 +36,7 @@ namespace Nova3diLab.Model.Lod.Tests
                 CollisionVolumeCount = 1
             };
 
-            byte[] expected = Nova3diLab.Tests.Properties.Resources.lod_header;
-            Assert.IsTrue(expected.SequenceEqual(lodHeader.Serialize()));
+            Assert.IsTrue(Resources.lod_header.SequenceEqual(lodHeader.Serialize()));
         }
 
         [TestMethod()]
