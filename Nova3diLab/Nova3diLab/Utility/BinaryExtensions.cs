@@ -11,5 +11,13 @@ namespace Nova3diLab.Utility
             decimal wholeValue = binaryReader.ReadInt16();
             return wholeValue + decimalValue;
         }
+
+        public static void WriteFixedPoint(this BinaryWriter binaryWriter, decimal value)
+        {
+            decimal wholePart = Math.Floor(value);
+            decimal decimalPart = value < 0 ? (value - wholePart) : (value - Math.Truncate(value));
+            binaryWriter.Write((short)(decimalPart * 65536));
+            binaryWriter.Write((short)wholePart);
+        }
     }
 }
