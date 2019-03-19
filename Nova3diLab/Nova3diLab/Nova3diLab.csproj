@@ -65,7 +65,7 @@
     <Compile Include="DF2\Model.cs" />
     <Compile Include="IBinaryFileStructure.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utility\NumberExtensions.cs" />
+    <Compile Include="Utility\BinaryExtensions.cs" />
     <Compile Include="Utility\StringExtensions.cs" />
   </ItemGroup>
   <ItemGroup>

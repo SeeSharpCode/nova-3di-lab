@@ -36,6 +36,11 @@ namespace Nova3diLab.Model.Lod.Tests
                 CollisionVolumeCount = 1
             };
 
+            using (FileStream fileStream = new FileStream("testing2.3di", FileMode.Create))
+            using (BinaryWriter writer = new BinaryWriter(fileStream))
+            {
+                writer.Write(-18.614f);
+            }
             Assert.IsTrue(Resources.lod_header.SequenceEqual(lodHeader.Serialize()));
         }
 
