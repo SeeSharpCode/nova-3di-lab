@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.IO;
 
 namespace Nova3diLab.Utility.Tests
@@ -26,7 +27,7 @@ namespace Nova3diLab.Utility.Tests
             using (MemoryStream memoryStream = new MemoryStream(bytes))
             using (BinaryReader binaryReader = new BinaryReader(memoryStream))
             {
-                Assert.AreEqual((decimal)-18.614, binaryReader.ReadFixedPoint());
+                Assert.AreEqual((decimal)-18.614, Math.Round(binaryReader.ReadFixedPoint(), 3));
             }
         }
 
@@ -50,7 +51,7 @@ namespace Nova3diLab.Utility.Tests
             using (MemoryStream memoryStream = new MemoryStream(bytes))
             using (BinaryReader binaryReader = new BinaryReader(memoryStream))
             {
-                Assert.AreEqual((decimal)7.427, binaryReader.ReadFixedPoint());
+                Assert.AreEqual((decimal)7.427,Math.Round(binaryReader.ReadFixedPoint(), 3));
             }
         }
     }

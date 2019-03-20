@@ -7,8 +7,8 @@ namespace Nova3diLab.Model.Lod
     public class LodHeader : IBinaryFileStructure
     {
         public int Length { get; set; }
-        public int SphereRadius { get; set; }
-        public int CircleRadius { get; set; }
+        public decimal SphereRadius { get; set; }
+        public decimal CircleRadius { get; set; }
         public decimal ZTotal { get; set; }
         public decimal XMin { get; set; }
         public decimal XMax { get; set; }
@@ -35,15 +35,15 @@ namespace Nova3diLab.Model.Lod
                 writer.Write(new byte[20]); // ODO NovalogicTools defines some other structures here.
                 writer.Write(Length);
                 writer.Write(0);
-                writer.Write(SphereRadius);
-                writer.Write(CircleRadius);
-                writer.Write(ZTotal);
-                writer.Write(XMin);
-                writer.Write(XMax);
-                writer.Write(YMin);
-                writer.Write(YMax);
-                writer.Write(ZMin);
-                writer.Write(ZMax);
+                writer.WriteFixedPoint(SphereRadius);
+                writer.WriteFixedPoint(CircleRadius);
+                writer.WriteFixedPoint(ZTotal);
+                writer.WriteFixedPoint(XMin);
+                writer.WriteFixedPoint(XMax);
+                writer.WriteFixedPoint(YMin);
+                writer.WriteFixedPoint(YMax);
+                writer.WriteFixedPoint(ZMin);
+                writer.WriteFixedPoint(ZMax);
                 writer.Write(LoopImageCount);
                 writer.Write(new byte[20]);
                 writer.Write(LoopInterval);

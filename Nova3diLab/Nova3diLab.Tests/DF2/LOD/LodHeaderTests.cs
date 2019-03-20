@@ -1,10 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Nova3diLab.Tests.Properties;
-using Nova3diLab.Utility;
 using System;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
 
 namespace Nova3diLab.Model.Lod.Tests
 {
@@ -17,15 +13,15 @@ namespace Nova3diLab.Model.Lod.Tests
             LodHeader lodHeader = new LodHeader
             {
                 Length = 1384,
-                SphereRadius = 0x0001BB67,
-                CircleRadius = 0x0001BB67,
-                ZTotal = 1.000,
+                SphereRadius = 1.73205080756888m,
+                CircleRadius = 1.73205080756888m,
+                ZTotal = 1,
                 XMin = 0,
-                XMax = 1.000,
+                XMax = 1,
                 YMin = 0,
-                YMax = 1.000,
+                YMax = 1,
                 ZMin = 0,
-                ZMax = 1.000,
+                ZMax = 1,
                 VertexCount = 8,
                 NormalCount = 12,
                 FaceCount = 12,
@@ -36,12 +32,8 @@ namespace Nova3diLab.Model.Lod.Tests
                 CollisionVolumeCount = 1
             };
 
-            using (FileStream fileStream = new FileStream("testing2.3di", FileMode.Create))
-            using (BinaryWriter writer = new BinaryWriter(fileStream))
-            {
-                writer.Write(-18.614f);
-            }
-            Assert.IsTrue(Resources.lod_header.SequenceEqual(lodHeader.Serialize()));
+            Assert.AreEqual(BitConverter.ToString(Resources.lod_header).Replace("-", " "), BitConverter.ToString(lodHeader.Serialize()).Replace("-", " "));
+            // Assert.IsTrue(Resources.lod_header.SequenceEqual(lodHeader.Serialize()));
         }
 
         [TestMethod()]

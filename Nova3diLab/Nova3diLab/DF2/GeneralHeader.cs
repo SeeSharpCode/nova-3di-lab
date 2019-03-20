@@ -12,8 +12,8 @@ namespace Nova3diLab.DF2
         public int Lod2Distance { get; set; }
         public int Lod1Distance { get; set; }
         public string RenderType { get; set; } = "crng";
-        public int Sphere { get; set; }
-        public int Radius { get; set; }
+        public decimal SphereRadius { get; set; }
+        public decimal CircleRadius { get; set; }
         public int TextureCount { get; set; }
         
         public byte[] Serialize()
@@ -39,8 +39,8 @@ namespace Nova3diLab.DF2
                 }
 
                 writer.Write(new byte[40]); // gap
-                writer.Write(Sphere);
-                writer.Write(Radius);
+                writer.WriteFixedPoint(SphereRadius);
+                writer.WriteFixedPoint(CircleRadius);
                 writer.Write(new byte[20]); // gap
                 writer.Write(TextureCount);
 

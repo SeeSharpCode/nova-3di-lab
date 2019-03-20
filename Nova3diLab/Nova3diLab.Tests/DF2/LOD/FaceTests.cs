@@ -1,6 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Nova3diLab.Tests.Properties;
-using System.IO;
 using System.Linq;
 
 namespace Nova3diLab.Model.Lod.Tests

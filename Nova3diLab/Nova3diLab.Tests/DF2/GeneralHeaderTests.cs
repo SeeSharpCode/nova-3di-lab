@@ -14,8 +14,8 @@ namespace Nova3diLab.DF2.Tests
             {
                 Name = "box",
                 LodCount = 1,
-                Sphere = 0x0001BB67,
-                Radius = 0x0001BB67,
+                SphereRadius = 1.73205080756888m,
+                CircleRadius = 1.73205080756888m,
                 TextureCount = 1,
             };
             
