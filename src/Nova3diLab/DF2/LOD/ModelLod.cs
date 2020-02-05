@@ -37,7 +37,7 @@ namespace Nova3diLab.Model.Lod
             };
         }
         
-        internal int CalcuateRadius()
+        public double CalcuateBoundingSphereRadius()
         {
             var xMaxAbsolute = Math.Max(Math.Abs(XMin), Math.Abs(XMax));
             var yMaxAbsolute = Math.Max(Math.Abs(YMin), Math.Abs(YMax));
@@ -45,7 +45,7 @@ namespace Nova3diLab.Model.Lod
 
             var maxSumSquared = Math.Pow(xMaxAbsolute, 2) + Math.Pow(yMaxAbsolute, 2) + Math.Pow(zMaxAbsolute, 2);
 
-            return (int)(Math.Sqrt(maxSumSquared) * 65536);
+            return Math.Sqrt(maxSumSquared);
         }
     }
 }

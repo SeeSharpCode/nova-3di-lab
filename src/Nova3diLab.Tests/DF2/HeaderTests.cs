@@ -4,17 +4,16 @@ using Xunit;
 
 namespace Nova3diLab.DF2.Tests
 {
-    public class GeneralHeaderTests
+    public class ModelHeaderTests
     {
         [Fact]
         public void GetBytesTest()
         {
-            var generalHeader = new GeneralHeader
+            var generalHeader = new ModelHeader
             {
                 Name = "box",
                 LodCount = 1,
-                SphereRadius = 1.73205080756888m,
-                CircleRadius = 1.73205080756888m,
+                BoundingSphereRadius = 1.73205080756888m,
                 TextureCount = 1,
             };
 

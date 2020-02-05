@@ -5,18 +5,18 @@ namespace Nova3diLab.DF2
 {
     public class Model : IBinaryFileStructure
     {
-        public GeneralHeader GeneralHeader { get; set; }
+        public ModelHeader Header { get; set; }
         public List<Texture> Textures;
         public List<ModelLod> Lods;
 
         public Model(string name, List<Texture> textures, List<ModelLod> lods)
         {
-            GeneralHeader = new GeneralHeader
+            Header = new ModelHeader
             {
                 Name = name,
                 LodCount = lods.Count,
                 TextureCount = textures.Count,
-                SphereRadius = lods[0].CalcuateRadius()
+                BoundingSphereRadius = lods[0].CalcuateBoundingSphereRadius()
             };
 
             Textures = textures;

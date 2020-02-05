@@ -1,8 +1,9 @@
-﻿using Nova3diLab.Utility;
+﻿using System;
+using Nova3diLab.Utility;
 
 namespace Nova3diLab.DF2
 {
-    public class GeneralHeader : IBinaryFileStructure
+    public class ModelHeader : IBinaryFileStructure
     {
         public string Name { get; set; }
         public int LodCount { get; set; }
@@ -11,8 +12,7 @@ namespace Nova3diLab.DF2
         public int Lod2Distance { get; set; }
         public int Lod1Distance { get; set; }
         public string RenderType { get; set; } = "crng";
-        public decimal SphereRadius { get; set; }
-        public decimal CircleRadius { get; set; }
+        public decimal BoundingSphereRadius { get; set; }
         public int TextureCount { get; set; }
 
         public byte[] Serialize()
@@ -37,8 +37,8 @@ namespace Nova3diLab.DF2
                 }
 
                 writer.Write(new byte[40]); // gap
-                writer.WriteFixedPoint(SphereRadius);
-                writer.WriteFixedPoint(CircleRadius);
+                writer.WriteFixedPoint(BoundingSphereRadius);
+                writer.WriteFixedPoint(BoundingSphereRadius);
                 writer.Write(new byte[20]); // gap
                 writer.Write(TextureCount);
             });
@@ -46,7 +46,7 @@ namespace Nova3diLab.DF2
 
         public void Deserialize()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
     }
 }
