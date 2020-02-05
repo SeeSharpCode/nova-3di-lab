@@ -12,7 +12,7 @@ namespace Nova3diLab.DF2
         public int Lod2Distance { get; set; }
         public int Lod1Distance { get; set; }
         public string RenderType { get; set; } = "crng";
-        public decimal BoundingSphereRadius { get; set; }
+        public double BoundingSphereRadius { get; set; }
         public int TextureCount { get; set; }
 
         public byte[] Serialize()

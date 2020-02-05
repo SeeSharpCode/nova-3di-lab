@@ -5,14 +5,14 @@ namespace Nova3diLab.Utility
 {
     public static class BinaryExtensions
     {
-        public static decimal ReadFixedPoint(this BinaryReader binaryReader)
+        public static double ReadFixedPoint(this BinaryReader binaryReader)
         {
-            var decimalValue = (decimal)binaryReader.ReadInt16() / 65536;
+            var decimalValue = binaryReader.ReadInt16() / 65536;
             var wholeValue = binaryReader.ReadInt16();
             return wholeValue + decimalValue;
         }
 
-        public static void WriteFixedPoint(this BinaryWriter binaryWriter, decimal value)
+        public static void WriteFixedPoint(this BinaryWriter binaryWriter, double value)
         {
             var wholePart = Math.Floor(value);
             var decimalPart = value < 0 ? (value - wholePart) : (value - Math.Truncate(value));
