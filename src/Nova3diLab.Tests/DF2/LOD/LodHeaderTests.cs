@@ -12,8 +12,7 @@ namespace Nova3diLab.Model.Lod.Tests
             var lodHeader = new LodHeader
             {
                 Length = 1384,
-                SphereRadius = 1.73205080756888,
-                CircleRadius = 1.73205080756888,
+                BoundingSphereRadius = 1.73205080756888,
                 ZTotal = 1,
                 XMin = 0,
                 XMax = 1,

@@ -21,8 +21,7 @@ namespace Nova3diLab.Model.Lod.Tests
                 XMedian = .5,
                 YMedian = .5,
                 ZMedian = .5,
-                SphereRadius = 1.73205080756888,
-                CircleRadius = 1.73205080756888
+                BoundingSphereRadius = 1.73205080756888
             };
 
             var expected = File.ReadAllBytes("Resources/sub-object.3di");

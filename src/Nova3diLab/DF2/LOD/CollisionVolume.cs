@@ -17,8 +17,7 @@ namespace Nova3diLab.Model.Lod
         public double XMedian => (XMin + XMax) / 2;
         public double YMedian => (YMin + YMax) / 2;
         public double ZMedian => (ZMin + ZMax) / 2;
-        public double SphereRadius { get; set; }
-        public double CircleRadius { get; set; }
+        public double BoundingSphereRadius { get; set; }
         public double XTotal { get; set; }
         public double YTotal { get; set; }
         public double ZTotal { get; set; }
@@ -40,10 +39,8 @@ namespace Nova3diLab.Model.Lod
                 writer.WriteFixedPoint(XMedian);
                 writer.WriteFixedPoint(YMedian);
                 writer.WriteFixedPoint(ZMedian);
-                writer.WriteFixedPoint(SphereRadius);
-                writer.WriteFixedPoint(CircleRadius);
-                writer.WriteFixedPoint(CircleRadius);
-
+                writer.WriteFixedPoint(BoundingSphereRadius);
+                writer.WriteFixedPoint(BoundingSphereRadius);
                 return buffer.ToArray();
             }
         }
