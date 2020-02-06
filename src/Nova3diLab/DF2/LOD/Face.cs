@@ -9,12 +9,12 @@ namespace Nova3diLab.Model.Lod
         public short Index { get; set; }
 
         // UV coordinates
-        public decimal U1 { get; set; }
-        public decimal U2 { get; set; }
-        public decimal U3 { get; set; }
-        public decimal V1 { get; set; }
-        public decimal V2 { get; set; }
-        public decimal V3 { get; set; }
+        public double U1 { get; set; }
+        public double U2 { get; set; }
+        public double U3 { get; set; }
+        public double V1 { get; set; }
+        public double V2 { get; set; }
+        public double V3 { get; set; }
         public short Vertex1Index { get; set; }
         public short Vertex2Index { get; set; }
         public short Vertex3Index { get; set; }
@@ -25,14 +25,14 @@ namespace Nova3diLab.Model.Lod
         /// <summary>
         /// Negative value of distance from face to zero point.
         /// </summary>
-        public decimal Distance { get; set; }
+        public double Distance { get; set; }
 
-        public decimal XMin { get; set; }
-        public decimal XMax { get; set; }
-        public decimal YMin { get; set; }
-        public decimal YMax { get; set; }
-        public decimal ZMin { get; set; }
-        public decimal ZMax { get; set; }
+        public double XMin { get; set; }
+        public double XMax { get; set; }
+        public double YMin { get; set; }
+        public double YMax { get; set; }
+        public double ZMin { get; set; }
+        public double ZMax { get; set; }
         public int MaterialIndex { get; set; }
 
         public byte[] Serialize()

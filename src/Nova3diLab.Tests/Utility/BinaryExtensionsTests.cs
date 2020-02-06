@@ -26,7 +26,7 @@ namespace Nova3diLab.Utility.Tests
             using (var memoryStream = new MemoryStream(bytes))
             using (var binaryReader = new BinaryReader(memoryStream))
             {
-                Assert.Equal((decimal)-18.614, Math.Round(binaryReader.ReadFixedPoint(), 3));
+                Assert.Equal(-18.614, binaryReader.ReadFixedPoint());
             }
         }
 
@@ -50,7 +50,7 @@ namespace Nova3diLab.Utility.Tests
             using (var memoryStream = new MemoryStream(bytes))
             using (var binaryReader = new BinaryReader(memoryStream))
             {
-                Assert.Equal((decimal)7.427,Math.Round(binaryReader.ReadFixedPoint(), 3));
+                Assert.Equal(7.427, binaryReader.ReadFixedPoint());
             }
         }
     }

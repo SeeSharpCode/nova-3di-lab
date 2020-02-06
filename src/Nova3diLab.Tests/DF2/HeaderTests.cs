@@ -13,7 +13,7 @@ namespace Nova3diLab.DF2.Tests
             {
                 Name = "box",
                 LodCount = 1,
-                BoundingSphereRadius = 1.73205080756888m,
+                BoundingSphereRadius = 1.73205080756888,
                 TextureCount = 1,
             };
 

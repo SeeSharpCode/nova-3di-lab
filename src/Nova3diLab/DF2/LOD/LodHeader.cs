@@ -7,15 +7,15 @@ namespace Nova3diLab.Model.Lod
     public class LodHeader : IBinaryFileStructure
     {
         public int Length { get; set; }
-        public decimal SphereRadius { get; set; }
-        public decimal CircleRadius { get; set; }
-        public decimal ZTotal { get; set; }
-        public decimal XMin { get; set; }
-        public decimal XMax { get; set; }
-        public decimal YMin { get; set; }
-        public decimal YMax { get; set; }
-        public decimal ZMin { get; set; }
-        public decimal ZMax { get; set; }
+        public double SphereRadius { get; set; }
+        public double CircleRadius { get; set; }
+        public double ZTotal { get; set; }
+        public double XMin { get; set; }
+        public double XMax { get; set; }
+        public double YMin { get; set; }
+        public double YMax { get; set; }
+        public double ZMin { get; set; }
+        public double ZMax { get; set; }
         public int LoopImageCount { get; set; }
         public int LoopInterval { get; set; }
         public int VertexCount { get; set; }

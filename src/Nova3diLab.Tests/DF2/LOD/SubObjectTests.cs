@@ -18,11 +18,11 @@ namespace Nova3diLab.Model.Lod.Tests
                 XMaximum = 1,
                 YMaximum = 1,
                 ZMaximum = 1,
-                XMedian = .5m,
-                YMedian = .5m,
-                ZMedian = .5m,
-                SphereRadius = 1.73205080756888m,
-                CircleRadius = 1.73205080756888m
+                XMedian = .5,
+                YMedian = .5,
+                ZMedian = .5,
+                SphereRadius = 1.73205080756888,
+                CircleRadius = 1.73205080756888
             };
 
             var expected = File.ReadAllBytes("Resources/sub-object.3di");

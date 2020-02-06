@@ -14,20 +14,20 @@ namespace Nova3diLab.Model.Lod
         }
 
         public CollisionVolumeType VolumeType { get; set; }
-        public decimal XMedian => (XMin + XMax) / 2;
-        public decimal YMedian => (YMin + YMax) / 2;
-        public decimal ZMedian => (ZMin + ZMax) / 2;
-        public decimal SphereRadius { get; set; }
-        public decimal CircleRadius { get; set; }
-        public decimal XTotal { get; set; }
-        public decimal YTotal { get; set; }
-        public decimal ZTotal { get; set; }
-        public decimal XMin { get; set; }
-        public decimal XMax { get; set; }
-        public decimal YMin { get; set; }
-        public decimal YMax { get; set; }
-        public decimal ZMin { get; set; }
-        public decimal ZMax { get; set; }
+        public double XMedian => (XMin + XMax) / 2;
+        public double YMedian => (YMin + YMax) / 2;
+        public double ZMedian => (ZMin + ZMax) / 2;
+        public double SphereRadius { get; set; }
+        public double CircleRadius { get; set; }
+        public double XTotal { get; set; }
+        public double YTotal { get; set; }
+        public double ZTotal { get; set; }
+        public double XMin { get; set; }
+        public double XMax { get; set; }
+        public double YMin { get; set; }
+        public double YMax { get; set; }
+        public double ZMin { get; set; }
+        public double ZMax { get; set; }
         public int CollisionPlaneCount { get; set; }
 
         public byte[] Serialize()

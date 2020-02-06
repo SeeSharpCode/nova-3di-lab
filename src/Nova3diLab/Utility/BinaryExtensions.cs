@@ -7,7 +7,7 @@ namespace Nova3diLab.Utility
     {
         public static double ReadFixedPoint(this BinaryReader binaryReader)
         {
-            var decimalValue = binaryReader.ReadInt16() / 65536;
+            var decimalValue = Math.Round((double)binaryReader.ReadInt16() / 65536, 3);
             var wholeValue = binaryReader.ReadInt16();
             return wholeValue + decimalValue;
         }
