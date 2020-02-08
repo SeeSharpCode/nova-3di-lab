@@ -1,8 +1,10 @@
-﻿namespace Nova3diLab
+﻿using System.IO;
+
+namespace Nova3diLab
 {
-    interface IModelSerializable
+    public interface IModelSerializable
     {
-        byte[] Serialize();
-        void Deserialize();
+        void Serialize(BinaryWriter writer);
+        void Deserialize(BinaryReader reader);
     }
 }

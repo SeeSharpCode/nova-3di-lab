@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using System.Linq;
+using Nova3diLab.Tests;
 using Xunit;
 
 namespace Nova3diLab.Model.Lod.Tests
@@ -25,7 +26,7 @@ namespace Nova3diLab.Model.Lod.Tests
             };
 
             var expected = File.ReadAllBytes("Resources/sub-object.3di");
-            Assert.True(expected.SequenceEqual(subObject.Serialize()));
+            Assert.True(expected.SequenceEqual(TestUtils.SerializeToBytes(subObject)));
         }
 
         [Fact]

@@ -1,8 +1,9 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 
 namespace Nova3diLab.Model.Lod
 {
-    public class CollisionPlaneVector
+    public class CollisionPlaneVector : IModelSerializable
     {
         public short X { get; set; }
         public short Z { get; set; }
@@ -17,17 +18,17 @@ namespace Nova3diLab.Model.Lod
             Distance = distance;
         }
 
-        public byte[] Serialize()
+        public void Serialize(BinaryWriter writer)
         {
-            using (var buffer = new MemoryStream())
-            using (var writer = new BinaryWriter(buffer))
-            {
-                writer.Write(X);
-                writer.Write(Y);
-                writer.Write(Z);
-                writer.Write(Distance);
-                return buffer.ToArray();
-            }
+            writer.Write(X);
+            writer.Write(Y);
+            writer.Write(Z);
+            writer.Write(Distance);
+        }
+
+        public void Deserialize(BinaryReader reader)
+        {
+            throw new NotImplementedException();
         }
     }
 }

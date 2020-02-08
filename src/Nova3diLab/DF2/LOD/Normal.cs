@@ -18,20 +18,15 @@ namespace Nova3diLab.Model.Lod
             W = w;
         }
 
-        public byte[] Serialize()
+        public void Serialize(BinaryWriter writer)
         {
-            using (var buffer = new MemoryStream())
-            using (var writer = new BinaryWriter(buffer))
-            {
-                writer.Write(X);
-                writer.Write(Y);
-                writer.Write(Z);
-                writer.Write(W);
-                return buffer.ToArray();
-            }
+            writer.Write(X);
+            writer.Write(Y);
+            writer.Write(Z);
+            writer.Write(W);
         }
 
-        public void Deserialize()
+        public void Deserialize(BinaryReader reader)
         {
             throw new NotImplementedException();
         }

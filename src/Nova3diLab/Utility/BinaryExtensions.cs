@@ -19,15 +19,5 @@ namespace Nova3diLab.Utility
             binaryWriter.Write((ushort)(decimalPart * 65536));
             binaryWriter.Write((short)wholePart);
         }
-
-        public static byte[] SerializeToBytes(Action<BinaryWriter> serialization)
-        {
-            using (var buffer = new MemoryStream())
-            using (var writer = new BinaryWriter(buffer))
-            {
-                serialization.Invoke(writer);
-                return buffer.ToArray();
-            }
-        }
     }
 }

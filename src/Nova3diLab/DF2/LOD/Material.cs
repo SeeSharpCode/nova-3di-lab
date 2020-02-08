@@ -1,4 +1,7 @@
-﻿namespace Nova3diLab.Model.Lod
+﻿using System;
+using System.IO;
+
+namespace Nova3diLab.Model.Lod
 {
     public class Material : IModelSerializable
     {
@@ -12,14 +15,14 @@
         public byte WhiteBitmapIndex { get; set; }
         public byte AnimationFrameSequenceNumber { get; set; }
 
-        public void Deserialize()
+        public void Serialize(BinaryWriter writer)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
-        public byte[] Serialize()
+        public void Deserialize(BinaryReader reader)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
     }
 }

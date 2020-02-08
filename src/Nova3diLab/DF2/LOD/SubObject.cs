@@ -22,38 +22,33 @@ namespace Nova3diLab.Model.Lod
         public double BoundingSphereRadius { get; set; }
         public double ZTotal => ZMaximum - ZMinimum;
 
-        public byte[] Serialize()
+        public void Serialize(BinaryWriter writer)
         {
-            using (var buffer = new MemoryStream())
-            using (var writer = new BinaryWriter(buffer))
-            {
-                writer.Write(0);
-                writer.Write(VertexCount);
-                writer.Write(0);
-                writer.Write(FacesCount);
-                writer.Write(0);
-                writer.Write(NormalsCount);
-                writer.Write(0);
-                writer.Write(CollisionVolumesCount);
-                writer.Write(0);
-                writer.Write(new byte[28]);
-                writer.WriteFixedPoint(XMinimum);
-                writer.WriteFixedPoint(XMaximum);
-                writer.WriteFixedPoint(YMinimum);
-                writer.WriteFixedPoint(YMaximum);
-                writer.WriteFixedPoint(ZMinimum);
-                writer.WriteFixedPoint(ZMaximum);
-                writer.WriteFixedPoint(XMedian);
-                writer.WriteFixedPoint(YMedian);
-                writer.WriteFixedPoint(ZMedian);
-                writer.WriteFixedPoint(BoundingSphereRadius);
-                writer.WriteFixedPoint(BoundingSphereRadius);
-                writer.WriteFixedPoint(ZTotal);
-                return buffer.ToArray();
-            }
+            writer.Write(0);
+            writer.Write(VertexCount);
+            writer.Write(0);
+            writer.Write(FacesCount);
+            writer.Write(0);
+            writer.Write(NormalsCount);
+            writer.Write(0);
+            writer.Write(CollisionVolumesCount);
+            writer.Write(0);
+            writer.Write(new byte[28]);
+            writer.WriteFixedPoint(XMinimum);
+            writer.WriteFixedPoint(XMaximum);
+            writer.WriteFixedPoint(YMinimum);
+            writer.WriteFixedPoint(YMaximum);
+            writer.WriteFixedPoint(ZMinimum);
+            writer.WriteFixedPoint(ZMaximum);
+            writer.WriteFixedPoint(XMedian);
+            writer.WriteFixedPoint(YMedian);
+            writer.WriteFixedPoint(ZMedian);
+            writer.WriteFixedPoint(BoundingSphereRadius);
+            writer.WriteFixedPoint(BoundingSphereRadius);
+            writer.WriteFixedPoint(ZTotal);
         }
 
-        public void Deserialize()
+        public void Deserialize(BinaryReader reader)
         {
             throw new NotImplementedException();
         }

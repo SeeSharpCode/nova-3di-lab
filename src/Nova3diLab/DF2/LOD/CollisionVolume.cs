@@ -1,4 +1,5 @@
 ﻿using Nova3diLab.Utility;
+using System;
 using System.IO;
 
 namespace Nova3diLab.Model.Lod
@@ -29,25 +30,20 @@ namespace Nova3diLab.Model.Lod
         public double ZMax { get; set; }
         public int CollisionPlaneCount { get; set; }
 
-        public byte[] Serialize()
+        public void Serialize(BinaryWriter writer)
         {
-            using (var buffer = new MemoryStream())
-            using (var writer = new BinaryWriter(buffer))
-            {
-                writer.Write((int)VolumeType);
-                writer.Write(0);
-                writer.WriteFixedPoint(XMedian);
-                writer.WriteFixedPoint(YMedian);
-                writer.WriteFixedPoint(ZMedian);
-                writer.WriteFixedPoint(BoundingSphereRadius);
-                writer.WriteFixedPoint(BoundingSphereRadius);
-                return buffer.ToArray();
-            }
+            writer.Write((int)VolumeType);
+            writer.Write(0);
+            writer.WriteFixedPoint(XMedian);
+            writer.WriteFixedPoint(YMedian);
+            writer.WriteFixedPoint(ZMedian);
+            writer.WriteFixedPoint(BoundingSphereRadius);
+            writer.WriteFixedPoint(BoundingSphereRadius);
         }
 
-        public void Deserialize()
+        public void Deserialize(BinaryReader reader)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
     }
 }

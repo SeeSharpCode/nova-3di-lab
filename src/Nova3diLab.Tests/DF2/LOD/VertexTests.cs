@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Nova3diLab.Tests;
 using Xunit;
 
 namespace Nova3diLab.Model.Lod.Tests
@@ -24,8 +25,7 @@ namespace Nova3diLab.Model.Lod.Tests
             };
 
             var expected = File.ReadAllBytes("Resources/vertices.3di");
-            var actual = vertices.SelectMany(vertex => vertex.Serialize()).ToArray();
-
+            var actual = vertices.SelectMany(vertex => TestUtils.SerializeToBytes(vertex)).ToArray();
             Assert.True(expected.SequenceEqual(actual));
         }
 

@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using System.Linq;
+using Nova3diLab.Tests;
 using Xunit;
 
 namespace Nova3diLab.Model.Lod.Tests
@@ -31,7 +32,7 @@ namespace Nova3diLab.Model.Lod.Tests
             };
 
             var expected = File.ReadAllBytes("Resources/lod-header.3di");
-            Assert.True(expected.SequenceEqual(lodHeader.Serialize()));
+            Assert.True(expected.SequenceEqual(TestUtils.SerializeToBytes(lodHeader)));
         }
 
         [Fact]

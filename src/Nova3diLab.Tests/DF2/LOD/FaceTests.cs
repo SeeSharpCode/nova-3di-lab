@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using System.Linq;
+using Nova3diLab.Tests;
 using Xunit;
 
 namespace Nova3diLab.Model.Lod.Tests
@@ -35,7 +36,7 @@ namespace Nova3diLab.Model.Lod.Tests
             };
             
             var expected = File.ReadAllBytes("Resources/face1.3di");
-            Assert.True(expected.SequenceEqual(face.Serialize()));
+            Assert.True(expected.SequenceEqual(TestUtils.SerializeToBytes(face)));
         }
 
         [Fact]

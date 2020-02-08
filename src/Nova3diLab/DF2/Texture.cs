@@ -1,4 +1,6 @@
-﻿using Nova3diLab.Utility;
+﻿using System;
+using System.IO;
+using Nova3diLab.Utility;
 
 namespace Nova3diLab.DF2
 {
@@ -12,30 +14,27 @@ namespace Nova3diLab.DF2
         public short Width { get; set; }
         public short Height { get; set; }
 
-        public byte[] Serialize()
+        public void Serialize(BinaryWriter writer)
         {
-            return BinaryExtensions.SerializeToBytes(writer =>
-            {
-                // Texture header
-                // TODO: Split into Name and TransparentName.
-                writer.Write(Name.ToBytes(28));
-                writer.Write(Size);
-                writer.Write(Index);
-                writer.Write((short)(IsLightOn ? 0x1F : 7));
-                writer.Write(Width);
-                writer.Write(Height);
-                writer.Write(new byte[12]);
+            // Texture header
+            // TODO: Split into Name and TransparentName.
+            writer.Write(Name.ToBytes(28));
+            writer.Write(Size);
+            writer.Write(Index);
+            writer.Write((short)(IsLightOn ? 0x1F : 7));
+            writer.Write(Width);
+            writer.Write(Height);
+            writer.Write(new byte[12]);
 
-                // TODO data
-                writer.Write(new byte[Width * Height]);
-                // TODO palette
-                writer.Write(new byte[1024]);
-            });
+            // TODO data
+            writer.Write(new byte[Width * Height]);
+            // TODO palette
+            writer.Write(new byte[1024]);
         }
 
-        public void Deserialize()
+        public void Deserialize(BinaryReader reader)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
     }
 }

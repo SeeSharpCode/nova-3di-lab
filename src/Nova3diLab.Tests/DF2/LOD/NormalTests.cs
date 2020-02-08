@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Nova3diLab.Tests;
 using Xunit;
 
 namespace Nova3diLab.Model.Lod.Tests
@@ -28,7 +29,7 @@ namespace Nova3diLab.Model.Lod.Tests
             };
 
             var expected = File.ReadAllBytes("Resources/normals.3di");
-            var actual = normals.SelectMany(normal => normal.Serialize()).ToArray();
+            var actual = normals.SelectMany(normal => TestUtils.SerializeToBytes(normal)).ToArray();
             Assert.True(expected.SequenceEqual(actual));
         }
 

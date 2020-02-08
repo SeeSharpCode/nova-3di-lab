@@ -35,38 +35,33 @@ namespace Nova3diLab.Model.Lod
         public double ZMax { get; set; }
         public int MaterialIndex { get; set; }
 
-        public byte[] Serialize()
+        public void Serialize(BinaryWriter writer)
         {
-            using (var buffer = new MemoryStream())
-            using (var writer = new BinaryWriter(buffer))
-            {
-                writer.Write((short)0);
-                writer.Write(Index);
-                writer.WriteFixedPoint(U1);
-                writer.WriteFixedPoint(U2);
-                writer.WriteFixedPoint(U3);
-                writer.WriteFixedPoint(V1);
-                writer.WriteFixedPoint(V2);
-                writer.WriteFixedPoint(V3);
-                writer.Write(Vertex1Index);
-                writer.Write(Vertex2Index);
-                writer.Write(Vertex3Index);
-                writer.Write(Normal1Index);
-                writer.Write(Normal2Index);
-                writer.Write(Normal3Index);
-                writer.WriteFixedPoint(Distance);
-                writer.WriteFixedPoint(XMin);
-                writer.WriteFixedPoint(XMax);
-                writer.WriteFixedPoint(YMin);
-                writer.WriteFixedPoint(YMax);
-                writer.WriteFixedPoint(ZMin);
-                writer.WriteFixedPoint(ZMax);
-                writer.Write(MaterialIndex);
-                return buffer.ToArray();
-            }
+            writer.Write((short)0);
+            writer.Write(Index);
+            writer.WriteFixedPoint(U1);
+            writer.WriteFixedPoint(U2);
+            writer.WriteFixedPoint(U3);
+            writer.WriteFixedPoint(V1);
+            writer.WriteFixedPoint(V2);
+            writer.WriteFixedPoint(V3);
+            writer.Write(Vertex1Index);
+            writer.Write(Vertex2Index);
+            writer.Write(Vertex3Index);
+            writer.Write(Normal1Index);
+            writer.Write(Normal2Index);
+            writer.Write(Normal3Index);
+            writer.WriteFixedPoint(Distance);
+            writer.WriteFixedPoint(XMin);
+            writer.WriteFixedPoint(XMax);
+            writer.WriteFixedPoint(YMin);
+            writer.WriteFixedPoint(YMax);
+            writer.WriteFixedPoint(ZMin);
+            writer.WriteFixedPoint(ZMax);
+            writer.Write(MaterialIndex);
         }
 
-        public void Deserialize()
+        public void Deserialize(BinaryReader reader)
         {
             throw new NotImplementedException();
         }

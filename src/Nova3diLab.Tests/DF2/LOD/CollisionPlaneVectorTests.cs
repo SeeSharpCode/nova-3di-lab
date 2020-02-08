@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Nova3diLab.Tests;
 using Xunit;
 
 namespace Nova3diLab.Model.Lod.Tests
@@ -21,7 +22,7 @@ namespace Nova3diLab.Model.Lod.Tests
             };
 
             var expected = File.ReadAllBytes("Resources/collision-planes.3di");
-            var actual = collisionPlaneVectors.SelectMany(collisionPlane => collisionPlane.Serialize()).ToArray();
+            var actual = collisionPlaneVectors.SelectMany(collisionPlane => TestUtils.SerializeToBytes(collisionPlane)).ToArray();
             Assert.True(expected.SequenceEqual(actual));
         }
     }

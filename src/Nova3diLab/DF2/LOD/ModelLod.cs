@@ -22,20 +22,6 @@ namespace Nova3diLab.Model.Lod
         public double YMax => Math.Round((double)Vertices.Select(vertex => (short)vertex.Y).Max() / 256, 3);
         public double ZMin => Math.Round((double)Vertices.Select(vertex => (short)vertex.Z).Min() / 256, 3);
         public double ZMax => Math.Round((double)Vertices.Select(vertex => (short)vertex.Z).Max() / 256, 3);
-
-        public ModelLod()
-        {
-            Header = new LodHeader
-            {
-                Length = Vertices.SelectMany(vertex => vertex.Serialize()).Count()
-                         + Normals.SelectMany(normal => normal.Serialize()).Count()
-                         + Faces.SelectMany(face => face.Serialize()).Count()
-                         + SubObjects.SelectMany(subObject => subObject.Serialize()).Count()
-                         + CollisionPlaneVectors.SelectMany(collisionPlane => collisionPlane.Serialize()).Count()
-                         + CollisionVolumes.SelectMany(collisionVolume => collisionVolume.Serialize()).Count()
-                         + Materials.SelectMany(material => material.Serialize()).Count()
-            };
-        }
         
         public double CalcuateBoundingSphereRadius()
         {

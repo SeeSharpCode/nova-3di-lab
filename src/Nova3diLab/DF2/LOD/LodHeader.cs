@@ -26,48 +26,43 @@ namespace Nova3diLab.Model.Lod
         public int CollisionPlaneCount { get; set; }
         public int CollisionVolumeCount { get; set; }
 
-        public byte[] Serialize()
+        public void Serialize(BinaryWriter writer)
         {
-            using (var buffer = new MemoryStream())
-            using (var writer = new BinaryWriter(buffer))
-            {
-                writer.Write(new byte[20]); // TODO NovalogicTools defines some other structures here.
-                writer.Write(Length);
-                writer.Write(0);
-                writer.WriteFixedPoint(BoundingSphereRadius);
-                writer.WriteFixedPoint(BoundingSphereRadius);
-                writer.WriteFixedPoint(ZTotal);
-                writer.WriteFixedPoint(XMin);
-                writer.WriteFixedPoint(XMax);
-                writer.WriteFixedPoint(YMin);
-                writer.WriteFixedPoint(YMax);
-                writer.WriteFixedPoint(ZMin);
-                writer.WriteFixedPoint(ZMax);
-                writer.Write(LoopImageCount);
-                writer.Write(new byte[20]);
-                writer.Write(LoopInterval);
-                writer.Write(new byte[36]);
-                writer.Write(VertexCount);
-                writer.Write(0);
-                writer.Write(NormalCount);
-                writer.Write(0);
-                writer.Write(FaceCount);
-                writer.Write(0);
-                writer.Write(SubObjectCount);
-                writer.Write(0);
-                writer.Write(PartAnimCount);
-                writer.Write(0);
-                writer.Write(MaterialCount);
-                writer.Write(0);
-                writer.Write(CollisionPlaneCount);
-                writer.Write(0);
-                writer.Write(CollisionVolumeCount);
-                writer.Write(0);
-                return buffer.ToArray();
-            }
+            writer.Write(new byte[20]); // TODO NovalogicTools defines some other structures here.
+            writer.Write(Length);
+            writer.Write(0);
+            writer.WriteFixedPoint(BoundingSphereRadius);
+            writer.WriteFixedPoint(BoundingSphereRadius);
+            writer.WriteFixedPoint(ZTotal);
+            writer.WriteFixedPoint(XMin);
+            writer.WriteFixedPoint(XMax);
+            writer.WriteFixedPoint(YMin);
+            writer.WriteFixedPoint(YMax);
+            writer.WriteFixedPoint(ZMin);
+            writer.WriteFixedPoint(ZMax);
+            writer.Write(LoopImageCount);
+            writer.Write(new byte[20]);
+            writer.Write(LoopInterval);
+            writer.Write(new byte[36]);
+            writer.Write(VertexCount);
+            writer.Write(0);
+            writer.Write(NormalCount);
+            writer.Write(0);
+            writer.Write(FaceCount);
+            writer.Write(0);
+            writer.Write(SubObjectCount);
+            writer.Write(0);
+            writer.Write(PartAnimCount);
+            writer.Write(0);
+            writer.Write(MaterialCount);
+            writer.Write(0);
+            writer.Write(CollisionPlaneCount);
+            writer.Write(0);
+            writer.Write(CollisionVolumeCount);
+            writer.Write(0);
         }
 
-        public void Deserialize()
+        public void Deserialize(BinaryReader reader)
         {
             throw new NotImplementedException();
         }
