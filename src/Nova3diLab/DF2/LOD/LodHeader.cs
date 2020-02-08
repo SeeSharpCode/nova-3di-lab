@@ -4,7 +4,7 @@ using System.IO;
 
 namespace Nova3diLab.Model.Lod
 {
-    public class LodHeader : IBinaryFileStructure
+    public class LodHeader : IModelSerializable
     {
         public int Length { get; set; }
         public double BoundingSphereRadius { get; set; }

@@ -4,7 +4,7 @@ using System.IO;
 
 namespace Nova3diLab.Model.Lod
 {
-    public class Face : IBinaryFileStructure
+    public class Face : IModelSerializable
     {
         public short Index { get; set; }
 

@@ -1,6 +1,6 @@
 ﻿namespace Nova3diLab
 {
-    interface IBinaryFileStructure
+    interface IModelSerializable
     {
         byte[] Serialize();
         void Deserialize();

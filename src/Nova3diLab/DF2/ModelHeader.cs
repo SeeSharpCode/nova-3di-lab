@@ -3,7 +3,7 @@ using Nova3diLab.Utility;
 
 namespace Nova3diLab.DF2
 {
-    public class ModelHeader : IBinaryFileStructure
+    public class ModelHeader : IModelSerializable
     {
         public string Name { get; set; }
         public int LodCount { get; set; }

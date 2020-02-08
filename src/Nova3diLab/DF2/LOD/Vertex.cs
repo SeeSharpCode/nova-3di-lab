@@ -3,7 +3,7 @@ using System.IO;
 
 namespace Nova3diLab.Model.Lod
 {
-    public class Vertex : IBinaryFileStructure
+    public class Vertex : IModelSerializable
     {
         public short X { get; }
         public short Y { get; }

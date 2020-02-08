@@ -3,7 +3,7 @@ using System.IO;
 
 namespace Nova3diLab.Model.Lod
 {
-    public class Normal : IBinaryFileStructure
+    public class Normal : IModelSerializable
     {
         public short X { get; }
         public short Y { get; }

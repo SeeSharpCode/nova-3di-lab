@@ -2,7 +2,7 @@
 
 namespace Nova3diLab.DF2
 {
-    public class Texture : IBinaryFileStructure
+    public class Texture : IModelSerializable
     {
         public string Name { get; set; }
         public string TransparentName { get; set; }

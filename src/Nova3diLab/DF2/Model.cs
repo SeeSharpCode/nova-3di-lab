@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Nova3diLab.DF2
 {
-    public class Model : IBinaryFileStructure
+    public class Model
     {
         public ModelHeader Header { get; set; }
         public List<Texture> Textures;

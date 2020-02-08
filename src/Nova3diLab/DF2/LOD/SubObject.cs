@@ -4,7 +4,7 @@ using System.IO;
 
 namespace Nova3diLab.Model.Lod
 {
-    public class SubObject : IBinaryFileStructure
+    public class SubObject : IModelSerializable
     {
         public int VertexCount { get; set; }
         public int FacesCount { get; set; }

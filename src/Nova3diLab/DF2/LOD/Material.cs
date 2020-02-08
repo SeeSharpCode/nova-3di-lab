@@ -1,6 +1,6 @@
 ﻿namespace Nova3diLab.Model.Lod
 {
-    public class Material : IBinaryFileStructure
+    public class Material : IModelSerializable
     {
         public string Name { get; set; }
         public byte Type1 { get; set; } // TODO: enum

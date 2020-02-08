@@ -3,7 +3,7 @@ using System.IO;
 
 namespace Nova3diLab.Model.Lod
 {
-    public class CollisionVolume : IBinaryFileStructure
+    public class CollisionVolume : IModelSerializable
     {
         public enum CollisionVolumeType
         {
