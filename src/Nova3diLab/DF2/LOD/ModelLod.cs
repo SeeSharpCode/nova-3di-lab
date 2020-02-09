@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Nova3diLab.DF2;
 
 namespace Nova3diLab.Model.Lod
 {
-    // TODO test
-    public class   ModelLod : IModelSerializable
+    public class ModelLod : IModelSerializable
     {
         public LodHeader Header { get; set; }
         public List<Vertex> Vertices { get; set; }
@@ -18,22 +18,14 @@ namespace Nova3diLab.Model.Lod
         public List<CollisionVolume> CollisionVolumes { get; set; }
         public List<Material> Materials { get; set; }
 
-        public double XMin => Math.Round((double)Vertices.Select(vertex => (short)vertex.X).Min() / 256, 3);
-        public double XMax => Math.Round((double)Vertices.Select(vertex => (short)vertex.X).Max() / 256, 3);
-        public double YMin => Math.Round((double)Vertices.Select(vertex => (short)vertex.Y).Min() / 256, 3);
-        public double YMax => Math.Round((double)Vertices.Select(vertex => (short)vertex.Y).Max() / 256, 3);
-        public double ZMin => Math.Round((double)Vertices.Select(vertex => (short)vertex.Z).Min() / 256, 3);
-        public double ZMax => Math.Round((double)Vertices.Select(vertex => (short)vertex.Z).Max() / 256, 3);
-        
-        public double CalcuateBoundingSphereRadius()
+        public ModelLod(List<Vertex> vertices, List<Face> faces, List<Texture> textures)
         {
-            var xMaxAbsolute = Math.Max(Math.Abs(XMin), Math.Abs(XMax));
-            var yMaxAbsolute = Math.Max(Math.Abs(YMin), Math.Abs(YMax));
-            var zMaxAbsolute = Math.Max(Math.Abs(ZMin), Math.Abs(ZMax));
-
-            var maxSumSquared = Math.Pow(xMaxAbsolute, 2) + Math.Pow(yMaxAbsolute, 2) + Math.Pow(zMaxAbsolute, 2);
-
-            return Math.Sqrt(maxSumSquared);
+            Vertices = vertices;
+            // TODO normals
+            Faces = faces;
+            SubObjects = new List<SubObject> { new SubObject(vertices, faces.Count, 0, 0) }; // TODO normal and collision counts
+            // TODO collision
+            Materials = textures.Select(texture => new Material(texture)).ToList();
         }
 
         public void Serialize(BinaryWriter writer)

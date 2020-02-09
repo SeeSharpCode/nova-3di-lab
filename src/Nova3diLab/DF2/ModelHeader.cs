@@ -7,7 +7,7 @@ namespace Nova3diLab.DF2
     public class ModelHeader : IModelSerializable
     {
         public string Name { get; set; }
-        public int LodCount { get; set; }
+        public int LodCount { get; set; } = 1;
         public int Lod4Distance { get; set; }
         public int Lod3Distance { get; set; }
         public int Lod2Distance { get; set; }
@@ -15,6 +15,13 @@ namespace Nova3diLab.DF2
         public string RenderType { get; set; } = "crng";
         public double BoundingSphereRadius { get; set; }
         public int TextureCount { get; set; }
+
+        public ModelHeader(string name, double boundingSphereRadius, int textureCount)
+        {
+            Name = name;
+            BoundingSphereRadius = boundingSphereRadius;
+            TextureCount = textureCount;
+        }
 
         public void Serialize(BinaryWriter writer)
         {

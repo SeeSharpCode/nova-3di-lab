@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using Nova3diLab.DF2;
 using Nova3diLab.Utility;
 
 namespace Nova3diLab.Model.Lod
@@ -22,13 +23,21 @@ namespace Nova3diLab.Model.Lod
         public string Name { get; set; }
         public byte SidesVisible { get; set; } = 1;
         public bool IsTransparent { get; set; }
-        public MaterialType MaterialType { get; set; }
+        public MaterialType MaterialType { get; set; } = MaterialType.Stone;
         public bool IsAnimated { get; set; }
         public byte GreenBitmapIndex { get; set; }
         public byte BrownBitmapIndex { get; set; }
         public byte WhiteBitmapIndex { get; set; }
         public byte AlphaBitmapIndex { get; set; }
         public bool IsGlowing { get; set; }
+
+        public Material(Texture texture)
+        {
+            Name = texture.Name;
+            GreenBitmapIndex = (byte)texture.Index;
+            BrownBitmapIndex = (byte)texture.Index;
+            WhiteBitmapIndex = (byte)texture.Index;
+        }
 
         public void Serialize(BinaryWriter writer)
         {

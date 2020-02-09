@@ -1,4 +1,5 @@
 ﻿using Nova3diLab.Model.Lod;
+using Nova3diLab.Utility;
 using System.Collections.Generic;
 using System.IO;
 
@@ -9,6 +10,14 @@ namespace Nova3diLab.DF2
         public ModelHeader Header { get; set; }
         public List<Texture> Textures;
         public List<ModelLod> Lods;
+
+        public Model(string name, List<Texture> textures, List<Vertex> vertices, List<Face> faces)
+        {
+            // TODO bounding sphere radius
+            Header = new ModelHeader(name, vertices.CalculateBoundingSphereRadius(), textures.Count);
+            Textures = textures;
+            Lods = new List<ModelLod> { new ModelLod(vertices, faces, textures) };
+        }
 
         public void SaveToFile(string filePath)
         {
