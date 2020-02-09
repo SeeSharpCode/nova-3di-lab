@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace Nova3diLab.Model.Lod
 {
-    public class ModelLod
+    // TODO test
+    public class ModelLod : IModelSerializable
     {
         public LodHeader Header { get; set; }
         public List<Vertex> Vertices { get; set; }
@@ -32,6 +34,24 @@ namespace Nova3diLab.Model.Lod
             var maxSumSquared = Math.Pow(xMaxAbsolute, 2) + Math.Pow(yMaxAbsolute, 2) + Math.Pow(zMaxAbsolute, 2);
 
             return Math.Sqrt(maxSumSquared);
+        }
+
+        public void Serialize(BinaryWriter writer)
+        {
+            Header.Serialize(writer);
+            Vertices.ForEach(vertex => vertex.Serialize(writer));
+            Normals.ForEach(normal => normal.Serialize(writer));
+            Faces.ForEach(face => face.Serialize(writer));
+            SubObjects.ForEach(subObject => subObject.Serialize(writer));
+            PartAnimations.ForEach(partAnimation => partAnimation.Serialize(writer));
+            CollisionPlaneVectors.ForEach(plane => plane.Serialize(writer));
+            CollisionVolumes.ForEach(volume => volume.Serialize(writer));
+            Materials.ForEach(material => material.Serialize(writer));
+        }
+
+        public void Deserialize(BinaryReader reader)
+        {
+            throw new NotImplementedException();
         }
     }
 }

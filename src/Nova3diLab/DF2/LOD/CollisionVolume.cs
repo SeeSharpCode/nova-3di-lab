@@ -4,7 +4,7 @@ using System.IO;
 
 namespace Nova3diLab.Model.Lod
 {
-    // TODO finish structure
+    // TODO finish structure and test
     public class CollisionVolume : IModelSerializable
     {
         public enum CollisionVolumeType

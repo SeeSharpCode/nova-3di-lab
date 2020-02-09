@@ -7,16 +7,16 @@ namespace Nova3diLab.Model.Lod.Tests
 {
     public class MaterialTests
     {
+        public static Material Material = new Material
+        {
+            Name = "box",
+        };
+
         [Fact]
         public void SerializeTest()
         {
-            var material = new Material
-            {
-                Name = "box",
-            };
-
             var expected = File.ReadAllBytes("Resources/material.3di");
-            Assert.True(expected.SequenceEqual(TestUtils.SerializeToBytes(material)));
+            Assert.True(expected.SequenceEqual(TestUtils.SerializeToBytes(Material)));
         }
 
         [Fact]
