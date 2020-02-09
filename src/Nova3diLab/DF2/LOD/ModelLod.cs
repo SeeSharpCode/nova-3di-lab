@@ -43,7 +43,7 @@ namespace Nova3diLab.Model.Lod
             Normals.ForEach(normal => normal.Serialize(writer));
             Faces.ForEach(face => face.Serialize(writer));
             SubObjects.ForEach(subObject => subObject.Serialize(writer));
-            PartAnimations.ForEach(partAnimation => partAnimation.Serialize(writer));
+            PartAnimations?.ForEach(partAnimation => partAnimation.Serialize(writer));
             CollisionPlaneVectors.ForEach(plane => plane.Serialize(writer));
             CollisionVolumes.ForEach(volume => volume.Serialize(writer));
             Materials.ForEach(material => material.Serialize(writer));
