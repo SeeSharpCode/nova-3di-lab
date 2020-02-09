@@ -6,7 +6,7 @@ using System.Linq;
 namespace Nova3diLab.Model.Lod
 {
     // TODO test
-    public class ModelLod : IModelSerializable
+    public class   ModelLod : IModelSerializable
     {
         public LodHeader Header { get; set; }
         public List<Vertex> Vertices { get; set; }

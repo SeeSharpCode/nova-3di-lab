@@ -7,7 +7,7 @@ namespace Nova3diLab.Model.Lod.Tests
 {
     public class MaterialTests
     {
-        public static Material Material = new Material
+        public static Material Material => new Material
         {
             Name = "box",
         };
