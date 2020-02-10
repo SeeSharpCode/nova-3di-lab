@@ -52,7 +52,7 @@ namespace Nova3diLab.Utility
             return Math.Round((vertices.GetZMin() + vertices.GetZMax() / 2), 3);
         }
 
-        public static double GetZTotal(this List<Vertex> vertices)
+        public static double GetZLength(this List<Vertex> vertices)
         {
             return Math.Round(vertices.GetZMax() - vertices.GetZMin(), 3);
         }

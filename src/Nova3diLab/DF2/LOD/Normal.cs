@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace Nova3diLab.Model.Lod
@@ -10,12 +11,12 @@ namespace Nova3diLab.Model.Lod
         public short Z { get; }
         public short W { get; }
 
-        public Normal(short x, short y, short z, short w)
+        public Normal(Face face, List<Vertex> vertices)
         {
-            X = x;
-            Y = y;
-            Z = z;
-            W = w;
+            var x = (
+                (vertices[face.Vertex2Index].Y - vertices[face.Vertex1Index].Y) * (vertices[face.Vertex3Index].Z - vertices[face.Vertex1Index].Z)
+                - ((vertices[face.Vertex3Index].Y - vertices[face.Vertex1Index].Y) * (vertices[face.Vertex2Index].Z - vertices[face.Vertex1Index].Z))
+            );
         }
 
         public void Serialize(BinaryWriter writer)

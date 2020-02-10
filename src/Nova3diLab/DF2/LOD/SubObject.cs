@@ -10,14 +10,12 @@ namespace Nova3diLab.Model.Lod
         private List<Vertex> _vertices;
 
         public int FacesCount { get; set; }
-        public int NormalsCount { get; set; }
         public int CollisionVolumesCount { get; set; }
 
-        public SubObject(List<Vertex> vertices, int facesCount, int normalsCount, int collisionVolumeCount)
+        public SubObject(List<Vertex> vertices, int facesCount, int collisionVolumeCount)
         {
             _vertices = vertices;
             FacesCount = facesCount;
-            NormalsCount = normalsCount;
             CollisionVolumesCount = collisionVolumeCount;
         }
 
@@ -28,7 +26,7 @@ namespace Nova3diLab.Model.Lod
             writer.Write(0);
             writer.Write(FacesCount);
             writer.Write(0);
-            writer.Write(NormalsCount);
+            writer.Write(FacesCount);
             writer.Write(0);
             writer.Write(CollisionVolumesCount);
             writer.Write(0);
@@ -44,7 +42,7 @@ namespace Nova3diLab.Model.Lod
             writer.WriteFixedPoint(_vertices.GetZMedian());
             writer.WriteFixedPoint(_vertices.CalculateBoundingSphereRadius());
             writer.WriteFixedPoint(_vertices.CalculateBoundingSphereRadius());
-            writer.WriteFixedPoint(_vertices.GetZTotal());
+            writer.WriteFixedPoint(_vertices.GetZLength());
         }
 
         public void Deserialize(BinaryReader reader)

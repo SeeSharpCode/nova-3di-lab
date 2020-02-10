@@ -20,10 +20,11 @@ namespace Nova3diLab.Model.Lod
 
         public ModelLod(List<Vertex> vertices, List<Face> faces, List<Texture> textures)
         {
+            Header = new LodHeader(vertices, faces.Count, textures.Count);
             Vertices = vertices;
             // TODO normals
             Faces = faces;
-            SubObjects = new List<SubObject> { new SubObject(vertices, faces.Count, 0, 0) }; // TODO normal and collision counts
+            SubObjects = new List<SubObject> { new SubObject(vertices, faces.Count, 0) }; // TODO collision counts
             // TODO collision
             Materials = textures.Select(texture => new Material(texture)).ToList();
         }
