@@ -13,7 +13,6 @@ namespace Nova3diLab.DF2
 
         public Model(string name, List<Texture> textures, List<Vertex> vertices, List<Face> faces)
         {
-            // TODO bounding sphere radius
             Header = new ModelHeader(name, vertices.CalculateBoundingSphereRadius(), textures.Count);
             Textures = textures;
             Lods = new List<ModelLod> { new ModelLod(vertices, faces, textures) };

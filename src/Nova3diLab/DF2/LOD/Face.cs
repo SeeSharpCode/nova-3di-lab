@@ -1,5 +1,6 @@
 ﻿using Nova3diLab.Utility;
 using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace Nova3diLab.Model.Lod
@@ -15,25 +16,30 @@ namespace Nova3diLab.Model.Lod
         public double V1 { get; set; }
         public double V2 { get; set; }
         public double V3 { get; set; }
-        public short Vertex1Index { get; set; }
-        public short Vertex2Index { get; set; }
-        public short Vertex3Index { get; set; }
-        public short Normal1Index { get; set; }
-        public short Normal2Index { get; set; }
-        public short Normal3Index { get; set; }
 
-        /// <summary>
-        /// Negative value of distance from face to zero point.
-        /// </summary>
-        public double Distance { get; set; }
+        public List<Vertex> Vertices { get; set; }
 
-        public double XMin { get; set; }
-        public double XMax { get; set; }
-        public double YMin { get; set; }
-        public double YMax { get; set; }
-        public double ZMin { get; set; }
-        public double ZMax { get; set; }
         public int MaterialIndex { get; set; }
+
+        public Face(short index, double u1, double u2, double u3, double v1, double v2, double v3, List<Vertex> vertices, int materialIndex)
+        {
+            Index = index;
+            U1 = u1;
+            U2 = u2;
+            U3 = u3;
+            V1 = v1;
+            V2 = v2;
+            V3 = v3;
+            Vertices = vertices;
+            MaterialIndex = materialIndex;
+        }
+
+        private double CalculateDistance()
+        {
+           return (-Vertices[0].X * (Vertices[1].Y * Vertices[2].Z - Vertices[2].Y * Vertices[1].Z) 
+                  - Vertices[1].X * (Vertices[2].Y * Vertices[0].Z - Vertices[0].Y * Vertices[2].Z)
+                  - Vertices[2].X * (Vertices[0].Y * Vertices[1].Z - Vertices[1].Y * Vertices[0].Z));
+        }
 
         public void Serialize(BinaryWriter writer)
         {
@@ -45,19 +51,17 @@ namespace Nova3diLab.Model.Lod
             writer.WriteFixedPoint(V1);
             writer.WriteFixedPoint(V2);
             writer.WriteFixedPoint(V3);
-            writer.Write(Vertex1Index);
-            writer.Write(Vertex2Index);
-            writer.Write(Vertex3Index);
-            writer.Write(Normal1Index);
-            writer.Write(Normal2Index);
-            writer.Write(Normal3Index);
-            writer.WriteFixedPoint(Distance);
-            writer.WriteFixedPoint(XMin);
-            writer.WriteFixedPoint(XMax);
-            writer.WriteFixedPoint(YMin);
-            writer.WriteFixedPoint(YMax);
-            writer.WriteFixedPoint(ZMin);
-            writer.WriteFixedPoint(ZMax);
+            Vertices.ForEach(vertex => writer.Write(vertex.Index));
+            writer.Write(Index);
+            writer.Write(Index);
+            writer.Write(Index);
+            writer.WriteFixedPoint(CalculateDistance());
+            writer.WriteFixedPoint(Vertices.GetXMin());
+            writer.WriteFixedPoint(Vertices.GetXMax());
+            writer.WriteFixedPoint(Vertices.GetYMin());
+            writer.WriteFixedPoint(Vertices.GetYMax());
+            writer.WriteFixedPoint(Vertices.GetZMin());
+            writer.WriteFixedPoint(Vertices.GetZMax());
             writer.Write(MaterialIndex);
         }
 

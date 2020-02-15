@@ -5,11 +5,12 @@ namespace Nova3diLab.Model.Lod
 {
     public class Vertex : IModelSerializable
     {
+        internal short Index { get; }
         public short X { get; }
         public short Y { get; }
         public short Z { get; }
 
-        public Vertex(short x, short y, short z)
+        public Vertex(short index, short x, short y, short z)
         {
             X = x;
             Y = y;
