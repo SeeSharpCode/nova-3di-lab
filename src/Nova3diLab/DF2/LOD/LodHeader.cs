@@ -9,21 +9,24 @@ namespace Nova3diLab.Model.Lod
     {
         private List<Vertex> _vertices;
 
+        // TODO calculate
         public int Length { get; set; }
         public int LoopImageCount { get; set; }
         public int LoopInterval { get; set; }
         public int FaceCount { get; set; }
-        public int SubObjectCount { get; set; }
+        public int SubObjectCount { get; set; } = 1;
         public int PartAnimCount { get; set; }
         public int MaterialCount { get; set; }
         public int CollisionPlaneCount { get; set; }
         public int CollisionVolumeCount { get; set; }
 
-        public LodHeader(List<Vertex> vertices, int faceCount, int materialCount)
+        public LodHeader(List<Vertex> vertices, int faceCount, int materialCount, int collisionPlaneCount, int collisionVolumeCount)
         {
             _vertices = vertices;
             FaceCount = faceCount;
             MaterialCount = materialCount;
+            CollisionPlaneCount = collisionPlaneCount;
+            CollisionVolumeCount = collisionVolumeCount;
         }
 
         public void Serialize(BinaryWriter writer)

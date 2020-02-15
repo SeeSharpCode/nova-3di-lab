@@ -9,26 +9,11 @@ namespace Nova3diLab.Model.Lod.Tests
 {
     public class NormalTests
     {
-        public static List<Normal> Normals => new List<Normal>
-        {
-            new Normal(0, 0, -16384, 1),
-            new Normal(0, 0, -16384, 1),
-            new Normal(0, 0, 16384, 1),
-            new Normal(0, 0, 16384, 1),
-            new Normal(0, -16384, 0, 2),
-            new Normal(0, -16384, 0, 2),
-            new Normal(0, 16384, 0, 2),
-            new Normal(0, 16384, 0, 2),
-            new Normal(-16384, 0, 0, 4),
-            new Normal(-16384, 0, 0, 4),
-            new Normal(16384, 0, 0, 4),
-            new Normal(16384, 0, 0, 4),
-        };
+        public static List<Normal> Normals => FaceTests.Faces.Select(face => new Normal(face)).ToList();
 
         [Fact]
         public void SerializeTest()
         {
-
             var expected = File.ReadAllBytes("Resources/normals.3di");
             var actual = Normals.SelectMany(normal => TestUtils.SerializeToBytes(normal)).ToArray();
             Assert.True(expected.SequenceEqual(actual));

@@ -1,5 +1,6 @@
 using System.IO;
 using System.Linq;
+using Nova3diLab.DF2.Tests;
 using Nova3diLab.Tests;
 using Xunit;
 
@@ -7,10 +8,7 @@ namespace Nova3diLab.Model.Lod.Tests
 {
     public class MaterialTests
     {
-        public static Material Material => new Material
-        {
-            Name = "box",
-        };
+        public static Material Material => new Material(TextureTests.Texture);
 
         [Fact]
         public void SerializeTest()

@@ -7,17 +7,10 @@ namespace Nova3diLab.DF2.Tests
 {
     public class TextureTests
     {
-        public static Texture Texture => new Texture
-        {
-            Name = "box",
-            Index = 0,
-            IsLightOn = false,
-            Width = 512,
-            Height = 512,
-        };
+        public static Texture Texture => new Texture("box", 0, 512, 512);
         
         [Fact]
-        public void GetBytesTest()
+        public void SerializeTest()
         {
             var expected = File.ReadAllBytes("Resources/texture.3di");
             Assert.True(expected.SequenceEqual(TestUtils.SerializeToBytes(Texture)));

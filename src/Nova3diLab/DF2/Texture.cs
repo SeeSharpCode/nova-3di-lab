@@ -14,6 +14,14 @@ namespace Nova3diLab.DF2
         public short Width { get; set; }
         public short Height { get; set; }
 
+        public Texture(string name, short index, short width, short height)
+        {
+            Name = name;
+            Index = index;
+            Width = width;
+            Height = height;
+        }
+
         public void Serialize(BinaryWriter writer)
         {
             // Texture header

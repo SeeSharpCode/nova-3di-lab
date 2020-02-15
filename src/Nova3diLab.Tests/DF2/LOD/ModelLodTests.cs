@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
+using Nova3diLab.DF2;
+using Nova3diLab.DF2.Tests;
 using Nova3diLab.Model.Lod;
 using Nova3diLab.Model.Lod.Tests;
 using Xunit;
@@ -8,17 +10,7 @@ namespace Nova3diLab.Tests.DF2.LOD
 {
     public class ModelLodTests
     {
-        public static ModelLod ModelLod => new ModelLod
-        {
-            Header = LodHeaderTests.LodHeader,
-            Vertices = VertexTests.Vertices,
-            Normals = NormalTests.Normals,
-            Faces = FaceTests.Faces,
-            SubObjects = new List<SubObject> { SubObjectTests.SubObject },
-            CollisionPlaneVectors = CollisionPlaneVectorTests.CollisionPlanes,
-            CollisionVolumes = new List<CollisionVolume> { CollisionVolumeTests.CollisionVolume },
-            Materials = new List<Material> { MaterialTests.Material }
-        };
+        public static ModelLod ModelLod => new ModelLod(VertexTests.Vertices, FaceTests.Faces, new List<Texture> { TextureTests.Texture });
         
         [Fact]
         public void SerializeTest()
