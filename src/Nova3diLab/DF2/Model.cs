@@ -11,11 +11,11 @@ namespace Nova3diLab.DF2
         public List<Texture> Textures;
         public List<ModelLod> Lods;
 
-        public Model(string name, List<Texture> textures, List<Vertex> vertices, List<Face> faces)
+        public Model(string name, List<Texture> textures, List<Vertex> vertices, List<Face> faces, List<CollisionPlaneVector> collisionPlanes, List<CollisionVolume> collisionVolumes)
         {
             Header = new ModelHeader(name, vertices.CalculateBoundingSphereRadius(), textures.Count);
             Textures = textures;
-            Lods = new List<ModelLod> { new ModelLod(vertices, faces, textures) };
+            Lods = new List<ModelLod> { new ModelLod(vertices, faces, textures, collisionPlanes, collisionVolumes) };
         }
 
         public void SaveToFile(string filePath)

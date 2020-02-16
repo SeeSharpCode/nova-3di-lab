@@ -37,7 +37,7 @@ namespace Nova3diLab.Model.Lod
             writer.WriteFixedPoint(_vertices.CalculateBoundingSphereRadius());
             writer.WriteFixedPoint(_vertices.CalculateBoundingSphereRadius());
             writer.WriteFixedPoint(_vertices.GetZLength());
-            writer.WriteFixedPoint(_vertices.GetXMin();
+            writer.WriteFixedPoint(_vertices.GetXMin());
             writer.WriteFixedPoint(_vertices.GetXMax());
             writer.WriteFixedPoint(_vertices.GetYMin());
             writer.WriteFixedPoint(_vertices.GetYMax());

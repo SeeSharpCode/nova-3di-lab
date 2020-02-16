@@ -10,7 +10,13 @@ namespace Nova3diLab.Tests.DF2.LOD
 {
     public class ModelLodTests
     {
-        public static ModelLod ModelLod => new ModelLod(VertexTests.Vertices, FaceTests.Faces, new List<Texture> { TextureTests.Texture });
+        public static ModelLod ModelLod => new ModelLod(
+            VertexTests.Vertices,
+            FaceTests.Faces,
+            new List<Texture> { TextureTests.Texture },
+            CollisionPlaneVectorTests.CollisionPlanes,
+            new List<CollisionVolume> { CollisionVolumeTests.CollisionVolume }
+        );
         
         [Fact]
         public void SerializeTest()

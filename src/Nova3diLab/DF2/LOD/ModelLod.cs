@@ -18,9 +18,9 @@ namespace Nova3diLab.Model.Lod
         public List<CollisionVolume> CollisionVolumes { get; set; }
         public List<Material> Materials { get; set; }
 
-        public ModelLod(List<Vertex> vertices, List<Face> faces, List<Texture> textures)
+        public ModelLod(List<Vertex> vertices, List<Face> faces, List<Texture> textures, List<CollisionPlaneVector> collisionPlanes, List<CollisionVolume> collisionVolumes)
         {
-            Header = new LodHeader(vertices, faces.Count, textures.Count);
+            Header = new LodHeader(vertices, faces.Count, textures.Count, collisionPlanes.Count, collisionVolumes.Count);
             Vertices = vertices;
             // TODO normals
             Faces = faces;

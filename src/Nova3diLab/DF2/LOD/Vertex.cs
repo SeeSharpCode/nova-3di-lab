@@ -5,7 +5,7 @@ namespace Nova3diLab.Model.Lod
 {
     public class Vertex : IModelSerializable
     {
-        internal short Index { get; }
+        public short Index { get; }
         public short X { get; }
         public short Y { get; }
         public short Z { get; }
