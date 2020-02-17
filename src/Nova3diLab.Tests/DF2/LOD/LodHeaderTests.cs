@@ -7,7 +7,14 @@ namespace Nova3diLab.Model.Lod.Tests
 {
     public class LodHeaderTests
     {
-        public static LodHeader LodHeader => new LodHeader(VertexTests.Vertices, FaceTests.Faces.Count, 1, 6, 1);
+        public static LodHeader LodHeader => new LodHeader(
+            1384,
+            VertexTests.Vertices,
+            FaceTests.Faces.Count,
+            1,
+            CollisionPlaneVectorTests.CollisionPlanes.Count,
+            1
+        );
 
         [Fact]
         public void SerializeTest()

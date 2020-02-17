@@ -16,6 +16,7 @@ namespace Nova3diLab.Model.Lod.Tests
         {
             var expected = File.ReadAllBytes("Resources/normals.3di");
             var actual = Normals.SelectMany(normal => TestUtils.SerializeToBytes(normal)).ToArray();
+            File.WriteAllBytes("Resources/normal-test-results.3di", actual);
             Assert.True(expected.SequenceEqual(actual));
         }
 

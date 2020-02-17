@@ -20,8 +20,9 @@ namespace Nova3diLab.Model.Lod
         public int CollisionPlaneCount { get; set; }
         public int CollisionVolumeCount { get; set; }
 
-        public LodHeader(List<Vertex> vertices, int faceCount, int materialCount, int collisionPlaneCount, int collisionVolumeCount)
+        public LodHeader(int length, List<Vertex> vertices, int faceCount, int materialCount, int collisionPlaneCount, int collisionVolumeCount)
         {
+            Length = length;
             _vertices = vertices;
             FaceCount = faceCount;
             MaterialCount = materialCount;

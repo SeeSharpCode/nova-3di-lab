@@ -24,9 +24,9 @@ namespace Nova3diLab.Model.Lod
 
         private double CalculateDistance()
         {
-            return (-Vertices[0].X * (Vertices[1].Y * Vertices[2].Z - Vertices[2].Y * Vertices[1].Z)
+            return ((-Vertices[0].X * (Vertices[1].Y * Vertices[2].Z - Vertices[2].Y * Vertices[1].Z)
                    - Vertices[1].X * (Vertices[2].Y * Vertices[0].Z - Vertices[0].Y * Vertices[2].Z)
-                   - Vertices[2].X * (Vertices[0].Y * Vertices[1].Z - Vertices[1].Y * Vertices[0].Z));
+                   - Vertices[2].X * (Vertices[0].Y * Vertices[1].Z - Vertices[1].Y * Vertices[0].Z)) / 65536) / 256;
         }
 
         public void Serialize(BinaryWriter writer)
@@ -35,10 +35,11 @@ namespace Nova3diLab.Model.Lod
             writer.Write(Index);
             UVCoordinates.ForEach(coordinate => writer.WriteFixedPoint(coordinate.Item1)); // U
             UVCoordinates.ForEach(coordinate => writer.WriteFixedPoint(coordinate.Item2)); // V
-            IndexedVertices.ForEach(vertex => writer.Write(vertex.Item1));
+            IndexedVertices.ForEach(vertex => writer.Write((short)vertex.Item1));
             writer.Write(Index);
             writer.Write(Index);
             writer.Write(Index);
+            var distance = CalculateDistance();
             writer.WriteFixedPoint(CalculateDistance());
             writer.WriteFixedPoint(Vertices.GetXMin());
             writer.WriteFixedPoint(Vertices.GetXMax());

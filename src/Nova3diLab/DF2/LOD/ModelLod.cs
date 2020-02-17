@@ -20,13 +20,14 @@ namespace Nova3diLab.Model.Lod
 
         public ModelLod(List<Vertex> vertices, List<Face> faces, List<Texture> textures, List<CollisionPlaneVector> collisionPlanes, List<CollisionVolume> collisionVolumes)
         {
-            Header = new LodHeader(vertices, faces.Count, textures.Count, collisionPlanes.Count, collisionVolumes.Count);
             Vertices = vertices;
-            // TODO normals
+            Normals = faces.Select(face => new Normal(face)).ToList();
             Faces = faces;
-            SubObjects = new List<SubObject> { new SubObject(vertices, faces.Count, 0) }; // TODO collision counts
-            // TODO collision
-            Materials = textures.Select(texture => new Material(texture)).ToList();
+            SubObjects = new List<SubObject> { new SubObject(vertices, faces.Count, collisionVolumes.Count) };
+            CollisionPlaneVectors = collisionPlanes;
+            CollisionVolumes = collisionVolumes;
+            Materials = textures.Select(texture => new Material(texture)).ToList();            
+            Header = new LodHeader(CalculateLength(), vertices, faces.Count, textures.Count, collisionPlanes.Count, collisionVolumes.Count);
         }
 
         public void Serialize(BinaryWriter writer)
@@ -45,6 +46,23 @@ namespace Nova3diLab.Model.Lod
         public void Deserialize(BinaryReader reader)
         {
             throw new NotImplementedException();
+        }
+
+        private int CalculateLength()
+        {
+            using (MemoryStream buffer = new MemoryStream())
+            using (BinaryWriter writer = new BinaryWriter(buffer))
+            {
+                Vertices.ForEach(vertex => vertex.Serialize(writer));
+                Normals.ForEach(normal => normal.Serialize(writer));
+                Faces.ForEach(face => face.Serialize(writer));
+                SubObjects.ForEach(subObject => subObject.Serialize(writer));
+                CollisionPlaneVectors.ForEach(collisionPlane => collisionPlane.Serialize(writer));
+                CollisionVolumes.ForEach(collisionVolume => collisionVolume.Serialize(writer));
+                Materials.ForEach(material => material.Serialize(writer));
+                
+                return (int)buffer.Length;
+            }
         }
     }
 }

@@ -73,7 +73,7 @@ namespace Nova3diLab.Model.Lod.Tests
             ),
             new Face(
                 10,
-                new List<Tuple<double, double>> { Tuple.Create(1.0, 1.0), Tuple.Create(0.0, 0.0), Tuple.Create(1.0, 1.0) },
+                new List<Tuple<double, double>> { Tuple.Create(1.0, 0.0), Tuple.Create(0.0, 0.0), Tuple.Create(1.0, 1.0) },
                 new List<Tuple<int, Vertex>> { Tuple.Create(5, VertexTests.Vertices[5]), Tuple.Create(3, VertexTests.Vertices[3]), Tuple.Create(6, VertexTests.Vertices[6]) },
                 0
             ),
