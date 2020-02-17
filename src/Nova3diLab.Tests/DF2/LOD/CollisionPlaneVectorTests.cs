@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Nova3diLab.Tests;
+using Nova3diLab.DF2.LOD;
 using Xunit;
 
-namespace Nova3diLab.DF2.LOD.Tests
+namespace Nova3diLab.Tests.DF2.LOD
 {
     public class CollisionPlaneVectorTests
     {

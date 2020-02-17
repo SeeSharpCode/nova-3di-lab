@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Nova3diLab.DF2;
 
 namespace Nova3diLab.DF2.LOD
 {

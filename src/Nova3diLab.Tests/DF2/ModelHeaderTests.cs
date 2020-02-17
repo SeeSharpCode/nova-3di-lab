@@ -1,11 +1,11 @@
 ﻿using System.IO;
 using System.Linq;
 using Nova3diLab.Utility;
-using Nova3diLab.DF2.LOD.Tests;
-using Nova3diLab.Tests;
+using Nova3diLab.Tests.DF2.LOD;
 using Xunit;
+using Nova3diLab.DF2;
 
-namespace Nova3diLab.DF2.Tests
+namespace Nova3diLab.Tests.DF2
 {
     public class ModelHeaderTests
     {
