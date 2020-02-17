@@ -1,11 +1,11 @@
-﻿using Nova3diLab.Model.Lod;
+﻿using Nova3diLab.DF2.LOD;
 using Nova3diLab.Utility;
 using System.Collections.Generic;
 using System.IO;
 
 namespace Nova3diLab.DF2
 {
-    public class Model
+    public class Model : IModelSerializable
     {
         public ModelHeader Header { get; set; }
         public List<Texture> Textures;
@@ -23,10 +23,20 @@ namespace Nova3diLab.DF2
             using (FileStream fileStream = new FileStream(filePath, FileMode.Create))
             using (BinaryWriter writer = new BinaryWriter(fileStream))
             {
-                Header.Serialize(writer);
-                Textures.ForEach(texture => texture.Serialize(writer));
-                Lods.ForEach(lod => lod.Serialize(writer));
+                Serialize(writer);
             }
+        }
+
+        public void Serialize(BinaryWriter writer)
+        {
+            Header.Serialize(writer);
+            Textures.ForEach(texture => texture.Serialize(writer));
+            Lods.ForEach(lod => lod.Serialize(writer));
+        }
+
+        public void Deserialize(BinaryReader reader)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

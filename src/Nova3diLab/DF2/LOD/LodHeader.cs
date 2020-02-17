@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace Nova3diLab.Model.Lod
+namespace Nova3diLab.DF2.LOD
 {
     public class LodHeader : IModelSerializable
     {

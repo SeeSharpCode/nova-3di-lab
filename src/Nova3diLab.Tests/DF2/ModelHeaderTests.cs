@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Linq;
 using Nova3diLab.Utility;
-using Nova3diLab.Model.Lod.Tests;
+using Nova3diLab.DF2.LOD.Tests;
 using Nova3diLab.Tests;
 using Xunit;
 

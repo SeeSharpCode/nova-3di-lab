@@ -2,8 +2,8 @@ using System.Collections.Generic;
 using System.IO;
 using Nova3diLab.DF2;
 using Nova3diLab.DF2.Tests;
-using Nova3diLab.Model.Lod;
-using Nova3diLab.Model.Lod.Tests;
+using Nova3diLab.DF2.LOD;
+using Nova3diLab.DF2.LOD.Tests;
 using Xunit;
 
 namespace Nova3diLab.Tests.DF2.LOD

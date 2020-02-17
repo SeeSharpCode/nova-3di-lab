@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace Nova3diLab.Model.Lod
+namespace Nova3diLab.DF2.LOD
 {
     public class Normal : IModelSerializable
     {

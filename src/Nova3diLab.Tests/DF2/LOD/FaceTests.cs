@@ -5,7 +5,7 @@ using System.Linq;
 using Nova3diLab.Tests;
 using Xunit;
 
-namespace Nova3diLab.Model.Lod.Tests
+namespace Nova3diLab.DF2.LOD.Tests
 {
     public class FaceTests
     {

@@ -1,5 +1,5 @@
 using System.IO;
-using Nova3diLab.Model.Lod;
+using Nova3diLab.DF2.LOD;
 using Xunit;
 
 namespace Nova3diLab.Tests.DF2.LOD

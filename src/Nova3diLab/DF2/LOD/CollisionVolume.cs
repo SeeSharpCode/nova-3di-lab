@@ -2,7 +2,7 @@
 using System;
 using System.IO;
 
-namespace Nova3diLab.Model.Lod
+namespace Nova3diLab.DF2.LOD
 {
     // TODO test
     public enum CollisionVolumeType
