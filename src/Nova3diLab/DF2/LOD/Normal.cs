@@ -36,8 +36,8 @@ namespace Nova3diLab.Model.Lod
 
             var absoluteMax = new List<short>() { Math.Abs(X), Math.Abs(Y), Math.Abs(Z) }.Max();
 
-            Shading = (short)(absoluteMax == X ? 4 : (absoluteMax == Y) ? 2 : 1);
-
+            Shading = (short)(absoluteMax == Math.Abs(X) ? 4 : (absoluteMax == Math.Abs(Y)) ? 2 : 1);
+            Console.WriteLine(Shading);
         }
 
         public void Serialize(BinaryWriter writer)
