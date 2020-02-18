@@ -24,7 +24,6 @@ namespace Nova3diLab.Tests.DF2
 
             var expected = File.ReadAllBytes("Resources/box.3di");
             var actual = TestUtils.SerializeToBytes(model);
-            File.WriteAllBytes("Resources/box-test-results.3di", actual);
             Assert.True(expected.SequenceEqual(actual));
         }
     }
