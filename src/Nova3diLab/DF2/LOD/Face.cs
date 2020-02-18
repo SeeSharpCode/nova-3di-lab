@@ -24,6 +24,7 @@ namespace Nova3diLab.DF2.LOD
 
         private double CalculateDistance()
         {
+            // TODO calculate 65536 (DL)
             return ((-Vertices[0].X * (Vertices[1].Y * Vertices[2].Z - Vertices[2].Y * Vertices[1].Z)
                    - Vertices[1].X * (Vertices[2].Y * Vertices[0].Z - Vertices[0].Y * Vertices[2].Z)
                    - Vertices[2].X * (Vertices[0].Y * Vertices[1].Z - Vertices[1].Y * Vertices[0].Z)) / 65536) / 256;
