@@ -4,7 +4,6 @@ using System.IO;
 
 namespace Nova3diLab.DF2.LOD
 {
-    // TODO test
     public enum CollisionVolumeType
     {
         Normal = 1,

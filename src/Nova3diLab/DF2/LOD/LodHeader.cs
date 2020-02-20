@@ -9,7 +9,6 @@ namespace Nova3diLab.DF2.LOD
     {
         private List<Vertex> _vertices;
 
-        // TODO calculate
         public int Length { get; set; }
         public int LoopImageCount { get; set; }
         public int LoopInterval { get; set; }
