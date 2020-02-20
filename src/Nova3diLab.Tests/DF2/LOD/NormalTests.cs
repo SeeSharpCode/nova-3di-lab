@@ -9,7 +9,7 @@ namespace Nova3diLab.Tests.DF2.LOD
 {
     public class NormalTests
     {
-        public static List<Normal> Normals => FaceTests.Faces.Select(face => new Normal(face)).ToList();
+        public static List<Normal> Normals => FaceTests.Faces.Select(face => face.Normal).ToList();
 
         [Fact]
         public void SerializeTest()

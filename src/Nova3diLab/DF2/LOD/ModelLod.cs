@@ -20,7 +20,7 @@ namespace Nova3diLab.DF2.LOD
         public ModelLod(List<Vertex> vertices, List<Face> faces, List<Texture> textures, List<CollisionPlaneVector> collisionPlanes, List<CollisionVolume> collisionVolumes)
         {
             Vertices = vertices;
-            Normals = faces.Select(face => new Normal(face)).ToList();
+            Normals = faces.Select(face => face.Normal).ToList();
             Faces = faces;
             SubObjects = new List<SubObject> { new SubObject(vertices, faces.Count, collisionVolumes.Count) };
             CollisionPlaneVectors = collisionPlanes;
