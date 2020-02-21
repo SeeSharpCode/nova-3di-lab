@@ -1,4 +1,4 @@
-namespace Nova3diLab.MQO
+namespace Nova3diLab.Mqo
 {
     public class MqoVertex
     {

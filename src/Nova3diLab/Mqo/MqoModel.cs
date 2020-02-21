@@ -1,9 +1,8 @@
-using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
+using System.Text.RegularExpressions;
 
-namespace Nova3diLab.MQO
+namespace Nova3diLab.Mqo
 {
     public class MqoModel
     {
@@ -11,17 +10,9 @@ namespace Nova3diLab.MQO
 
         public static MqoModel Load(string filePath)
         {
-            List<string> lines = File.ReadAllLines(filePath).Select(line => line.Trim()).ToList();
+            string fileContent = File.ReadAllText(filePath).
 
-            var vertexCount = Convert.ToInt32(
-                lines.Find(line => line.Contains("vertex")).Split(' ')[1]
-            );
-
-            var vertexStart = lines.FindIndex(line => line.Contains("vertex"));
-            var vertices = lines.GetRange(vertexStart + 1, vertexCount)
-                .Select(line => line.Split(' ').Select(coord => Convert.ToDouble(coord)).ToList())
-                .Select(coords => new MqoVertex(coords[0], coords[1], coords[2]))
-                .ToList();
+            var match = Regex.Match(fileContent, @"vertex\s(?<count>\d)\s{([\\r\\n\\t]*|(?<vertices>[\d\.\s-]*))*}");
 
             return null;
         }

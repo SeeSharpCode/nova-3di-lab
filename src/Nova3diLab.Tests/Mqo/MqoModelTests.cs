@@ -1,7 +1,7 @@
-using Nova3diLab.MQO;
+using Nova3diLab.Mqo;
 using Xunit;
 
-namespace Nova3diLab.Tests.MQO
+namespace Nova3diLab.Tests.Mqo
 {
     public class MqoObjectTests
     {
