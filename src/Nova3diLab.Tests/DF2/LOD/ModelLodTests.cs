@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using System.IO;
-using Nova3diLab.DF2;
-using Nova3diLab.DF2.LOD;
+using Nova3diLab.Df2;
+using Nova3diLab.Df2.Lod;
 using Xunit;
 
-namespace Nova3diLab.Tests.DF2.LOD
+namespace Nova3diLab.Tests.Df2.Lod
 {
     public class ModelLodTests
     {

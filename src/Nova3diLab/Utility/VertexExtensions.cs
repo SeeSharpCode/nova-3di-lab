@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Nova3diLab.DF2.LOD;
+using Nova3diLab.Df2.Lod;
 
 namespace Nova3diLab.Utility
 {

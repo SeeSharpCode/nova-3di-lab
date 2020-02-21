@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace Nova3diLab.DF2.LOD
+namespace Nova3diLab.Df2.Lod
 {
     public class Face : IModelSerializable
     {

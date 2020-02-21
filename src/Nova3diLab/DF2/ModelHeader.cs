@@ -2,7 +2,7 @@
 using System.IO;
 using Nova3diLab.Utility;
 
-namespace Nova3diLab.DF2
+namespace Nova3diLab.Df2
 {
     public class ModelHeader : IModelSerializable
     {

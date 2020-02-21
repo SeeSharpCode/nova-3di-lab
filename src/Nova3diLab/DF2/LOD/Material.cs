@@ -1,9 +1,9 @@
 ﻿using System;
 using System.IO;
-using Nova3diLab.DF2;
+using Nova3diLab.Df2;
 using Nova3diLab.Utility;
 
-namespace Nova3diLab.DF2.LOD
+namespace Nova3diLab.Df2.Lod
 {
     public enum MaterialType
     {

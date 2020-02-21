@@ -1,9 +1,9 @@
 ﻿using System.IO;
 using System.Linq;
-using Nova3diLab.DF2;
+using Nova3diLab.Df2;
 using Xunit;
 
-namespace Nova3diLab.Tests.DF2
+namespace Nova3diLab.Tests.Df2
 {
     public class TextureTests
     {

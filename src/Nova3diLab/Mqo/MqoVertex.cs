@@ -1,12 +1,12 @@
 namespace Nova3diLab.MQO
 {
-    public class Vertex
+    public class MqoVertex
     {
         public double X { get; }
         public double Y { get; }
         public double Z { get; }
 
-        public Vertex(double x, double y, double z)
+        public MqoVertex(double x, double y, double z)
         {
             X = x;
             Y = y;

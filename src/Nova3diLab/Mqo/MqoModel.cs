@@ -5,11 +5,11 @@ using System.Linq;
 
 namespace Nova3diLab.MQO
 {
-    public class MqoObject
+    public class MqoModel
     {
-        public List<Vertex> Vertices { get; set; }
+        public List<MqoVertex> Vertices { get; set; }
 
-        public static MqoObject Load(string filePath)
+        public static MqoModel Load(string filePath)
         {
             List<string> lines = File.ReadAllLines(filePath).Select(line => line.Trim()).ToList();
 
@@ -20,7 +20,7 @@ namespace Nova3diLab.MQO
             var vertexStart = lines.FindIndex(line => line.Contains("vertex"));
             var vertices = lines.GetRange(vertexStart + 1, vertexCount)
                 .Select(line => line.Split(' ').Select(coord => Convert.ToDouble(coord)).ToList())
-                .Select(coords => new Vertex(coords[0], coords[1], coords[2]))
+                .Select(coords => new MqoVertex(coords[0], coords[1], coords[2]))
                 .ToList();
 
             return null;

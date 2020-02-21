@@ -1,4 +1,4 @@
-namespace Nova3diLab.DF2.Converters
+namespace Nova3diLab.Df2.Converters
 {
     public interface IModelConvertable<T>
     {

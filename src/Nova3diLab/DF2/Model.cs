@@ -1,9 +1,9 @@
-﻿using Nova3diLab.DF2.LOD;
+﻿using Nova3diLab.Df2.Lod;
 using Nova3diLab.Utility;
 using System.Collections.Generic;
 using System.IO;
 
-namespace Nova3diLab.DF2
+namespace Nova3diLab.Df2
 {
     public class Model : IModelSerializable
     {

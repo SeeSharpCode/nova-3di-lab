@@ -1,12 +1,12 @@
 using System.Collections.Generic;
-using Nova3diLab.DF2;
-using Nova3diLab.Tests.DF2.LOD;
+using Nova3diLab.Df2;
+using Nova3diLab.Tests.Df2.Lod;
 using Xunit;
-using Nova3diLab.DF2.LOD;
+using Nova3diLab.Df2.Lod;
 using System.IO;
 using System.Linq;
 
-namespace Nova3diLab.Tests.DF2
+namespace Nova3diLab.Tests.Df2
 {
     public class ModelTests
     {
