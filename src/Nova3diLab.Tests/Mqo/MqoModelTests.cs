@@ -8,7 +8,7 @@ namespace Nova3diLab.Tests.Mqo
         [Fact]
         public void LoadTests()
         {
-            var mqo = MqoModel.Load(@"G:\Games\Novalogic\Delta Force 2\Tools\3di\Box\Box CVs.mqo");
+            var mqo = MqoModel.Load(@"Resources\Box Object.mqo");
         }
     }
 }
