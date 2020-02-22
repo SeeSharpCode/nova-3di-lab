@@ -11,14 +11,14 @@ namespace Nova3diLab.Tests.Df2.Lod
     {
         public static List<Vertex> Vertices => new List<Vertex>
         {
-            new Vertex(0, 0, 256, 256),
-            new Vertex(1, 0, 0, 256),
-            new Vertex(2, 256, 0, 256),
-            new Vertex(3, 256, 256, 256),
-            new Vertex(4, 0, 256, 0),
-            new Vertex(5, 256, 256, 0),
-            new Vertex(6, 256, 0, 0),
-            new Vertex(7, 0, 0, 0),
+            new Vertex(0, 256, 256),
+            new Vertex(0, 0, 256),
+            new Vertex(256, 0, 256),
+            new Vertex(256, 256, 256),
+            new Vertex(0, 256, 0),
+            new Vertex(256, 256, 0),
+            new Vertex(256, 0, 0),
+            new Vertex(0, 0, 0),
         };
 
         [Fact]
