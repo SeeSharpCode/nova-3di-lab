@@ -11,7 +11,7 @@ namespace Nova3diLab.Tests.Mqo
         [Fact]
         public void LoadTest()
         {
-            var mqo = MqoModel.Load(@"Resources\Box Object.mqo");
+            var mqo = MqoModel.Load("Resources/box-object.mqo");
 
             Assert.Equal(8, mqo.Vertices.Count);
             Assert.Equal(12, mqo.Faces.Count);

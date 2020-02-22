@@ -11,6 +11,11 @@ namespace Nova3diLab.Df2
         public List<Texture> Textures;
         public List<ModelLod> Lods;
 
+        public Model(string name, List<Texture> textures, List<Vertex> vertices, List<Face> faces)
+            : this(name, textures, vertices, faces, new List<CollisionPlaneVector>(), new List<CollisionVolume>())
+        {
+        }
+
         public Model(string name, List<Texture> textures, List<Vertex> vertices, List<Face> faces, List<CollisionPlaneVector> collisionPlanes, List<CollisionVolume> collisionVolumes)
         {
             Header = new ModelHeader(name, vertices.CalculateBoundingSphereRadius(), textures.Count);

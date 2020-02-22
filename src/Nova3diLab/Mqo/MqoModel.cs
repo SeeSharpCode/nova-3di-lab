@@ -47,8 +47,6 @@ namespace Nova3diLab.Mqo
                 ))
                 .ToList();
 
-            var model = new MqoModel(vertices, faces);
-
             return new MqoModel(vertices, faces);
         }
     }
