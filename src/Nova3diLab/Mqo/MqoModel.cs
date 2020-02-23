@@ -10,11 +10,13 @@ namespace Nova3diLab.Mqo
     {
         public List<MqoVertex> Vertices { get; }
         public List<MqoFace> Faces { get; }
+        public List<string> TextureNames { get; }
 
-        public MqoModel(List<MqoVertex> vertices, List<MqoFace> faces)
+        public MqoModel(List<MqoVertex> vertices, List<MqoFace> faces, List<string> textureNames)
         {
             Vertices = vertices;
             Faces = faces;
+            TextureNames = textureNames;
         }
 
         public static MqoModel Load(string filePath)
@@ -47,7 +49,12 @@ namespace Nova3diLab.Mqo
                 ))
                 .ToList();
 
-            return new MqoModel(vertices, faces);
+            var textureMatches = Regex.Matches(fileContent, @"tex\(.{1}(.*).{1}\)");
+            var textureNames = textureMatches.Cast<Match>().ToList()
+                .Select(match => match.Groups[1].Value)
+                .ToList();
+
+            return new MqoModel(vertices, faces, textureNames);
         }
     }
 }

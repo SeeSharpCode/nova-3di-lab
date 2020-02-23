@@ -32,6 +32,9 @@ namespace Nova3diLab.Tests.Mqo
                 Tuple.Create(1.0, 0.0) 
             };
             Assert.True(expectedUVCoordinates.SequenceEqual(face.UVCoordinates));
+
+            var expectedTextures = new List<string> { "Box.bmp" };
+            Assert.True(expectedTextures.SequenceEqual(mqo.TextureNames));
         }
     }
 }
