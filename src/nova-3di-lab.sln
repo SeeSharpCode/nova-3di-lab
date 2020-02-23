@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nova3diLab", "Nova3diLab\Nova3diLab.csproj", "{B222B3D7-FFC2-49B4-A8B9-6C1D75A2F05A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nova3diLab", "Nova3diLab\Nova3diLab.csproj", "{B222B3D7-FFC2-49B4-A8B9-6C1D75A2F05A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nova3diLab.Tests", "Nova3diLab.Tests\Nova3diLab.Tests.csproj", "{2F47DEA7-7E77-432F-9836-0FBD33D03E55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nova3diLab.Tests", "Nova3diLab.Tests\Nova3diLab.Tests.csproj", "{2F47DEA7-7E77-432F-9836-0FBD33D03E55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nova3diLab.App", "Nova3diLab.App\Nova3diLab.App.csproj", "{520757F9-2A6E-4BF1-BBB9-4D299BDD878B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{B222B3D7-FFC2-49B4-A8B9-6C1D75A2F05A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -44,5 +43,23 @@ Global
 		{2F47DEA7-7E77-432F-9836-0FBD33D03E55}.Release|x64.Build.0 = Release|Any CPU
 		{2F47DEA7-7E77-432F-9836-0FBD33D03E55}.Release|x86.ActiveCfg = Release|Any CPU
 		{2F47DEA7-7E77-432F-9836-0FBD33D03E55}.Release|x86.Build.0 = Release|Any CPU
+		{520757F9-2A6E-4BF1-BBB9-4D299BDD878B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{520757F9-2A6E-4BF1-BBB9-4D299BDD878B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{520757F9-2A6E-4BF1-BBB9-4D299BDD878B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{520757F9-2A6E-4BF1-BBB9-4D299BDD878B}.Debug|x64.Build.0 = Debug|Any CPU
+		{520757F9-2A6E-4BF1-BBB9-4D299BDD878B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{520757F9-2A6E-4BF1-BBB9-4D299BDD878B}.Debug|x86.Build.0 = Debug|Any CPU
+		{520757F9-2A6E-4BF1-BBB9-4D299BDD878B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{520757F9-2A6E-4BF1-BBB9-4D299BDD878B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{520757F9-2A6E-4BF1-BBB9-4D299BDD878B}.Release|x64.ActiveCfg = Release|Any CPU
+		{520757F9-2A6E-4BF1-BBB9-4D299BDD878B}.Release|x64.Build.0 = Release|Any CPU
+		{520757F9-2A6E-4BF1-BBB9-4D299BDD878B}.Release|x86.ActiveCfg = Release|Any CPU
+		{520757F9-2A6E-4BF1-BBB9-4D299BDD878B}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B085B688-897D-4CD6-A3B2-35EBF85599EA}
 	EndGlobalSection
 EndGlobal
