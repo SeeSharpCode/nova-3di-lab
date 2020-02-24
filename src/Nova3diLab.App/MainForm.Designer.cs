@@ -31,11 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.loadMqoButton = new System.Windows.Forms.Button();
             this.textureDataGrid = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.TextureName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Width = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Height = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IsLightOn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.save3diButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.modelNameTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.textureDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,29 +56,19 @@
             // 
             // textureDataGrid
             // 
+            this.textureDataGrid.AllowUserToAddRows = false;
             this.textureDataGrid.BackgroundColor = System.Drawing.SystemColors.Control;
             this.textureDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textureDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.textureDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TextureName,
             this.Width,
-            this.Height,
-            this.IsLightOn});
-            this.textureDataGrid.Location = new System.Drawing.Point(12, 90);
+            this.Height});
+            this.textureDataGrid.Location = new System.Drawing.Point(11, 145);
             this.textureDataGrid.Name = "textureDataGrid";
             this.textureDataGrid.RowHeadersVisible = false;
-            this.textureDataGrid.Size = new System.Drawing.Size(457, 159);
+            this.textureDataGrid.Size = new System.Drawing.Size(329, 159);
             this.textureDataGrid.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(9, 66);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Textures";
             // 
             // TextureName
             // 
@@ -96,16 +88,55 @@
             this.Height.Name = "Height";
             this.Height.Width = 108;
             // 
-            // IsLightOn
+            // label1
             // 
-            this.IsLightOn.HeaderText = "Light On?";
-            this.IsLightOn.Name = "IsLightOn";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(8, 121);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 20);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Textures";
+            // 
+            // save3diButton
+            // 
+            this.save3diButton.AutoSize = true;
+            this.save3diButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.save3diButton.Enabled = false;
+            this.save3diButton.Location = new System.Drawing.Point(110, 15);
+            this.save3diButton.Name = "save3diButton";
+            this.save3diButton.Size = new System.Drawing.Size(70, 27);
+            this.save3diButton.TabIndex = 3;
+            this.save3diButton.Text = "Save .3di";
+            this.save3diButton.UseVisualStyleBackColor = true;
+            this.save3diButton.Click += new System.EventHandler(this.save3diButton_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 60);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(85, 17);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Model Name";
+            // 
+            // modelNameTextBox
+            // 
+            this.modelNameTextBox.Location = new System.Drawing.Point(15, 81);
+            this.modelNameTextBox.Name = "modelNameTextBox";
+            this.modelNameTextBox.Size = new System.Drawing.Size(165, 25);
+            this.modelNameTextBox.TabIndex = 5;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(806, 524);
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(370, 335);
+            this.Controls.Add(this.modelNameTextBox);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.save3diButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textureDataGrid);
             this.Controls.Add(this.loadMqoButton);
@@ -125,10 +156,12 @@
         private System.Windows.Forms.Button loadMqoButton;
         private System.Windows.Forms.DataGridView textureDataGrid;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button save3diButton;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox modelNameTextBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn TextureName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Width;
         private System.Windows.Forms.DataGridViewTextBoxColumn Height;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn IsLightOn;
     }
 }
 

@@ -38,7 +38,7 @@ namespace Nova3diLab.Mqo
                         Tuple.Create(face.VertexIndices[2], vertices[face.VertexIndices[2]]),
                         Tuple.Create(face.VertexIndices[1], vertices[face.VertexIndices[1]])
                     },
-                    0
+                    face.MaterialIndex
                 ));
             }
 
