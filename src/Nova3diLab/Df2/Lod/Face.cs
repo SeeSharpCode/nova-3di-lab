@@ -36,7 +36,6 @@ namespace Nova3diLab.Df2.Lod
             writer.Write(Index);
             writer.Write(Index);
             writer.Write(Index);
-            var distance = CalculateDistance();
             writer.WriteFixedPoint(CalculateDistance());
             writer.WriteFixedPoint(Vertices.GetXMin());
             writer.WriteFixedPoint(Vertices.GetXMax());
