@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using Xunit;
 
-namespace Nova3diLab.Utility.Tests
+namespace Nova3diLab.Tests
 {
     public class StringExtensionsTests
     {

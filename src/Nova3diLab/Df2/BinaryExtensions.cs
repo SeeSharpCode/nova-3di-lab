@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace Nova3diLab.Utility
+namespace Nova3diLab.Df2
 {
     public static class BinaryExtensions
     {

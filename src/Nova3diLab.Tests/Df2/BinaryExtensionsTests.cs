@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Nova3diLab.Df2;
 using System.IO;
 using Xunit;
 
-namespace Nova3diLab.Utility.Tests
+namespace Nova3diLab.Tests.Df2
 {
     public class BinaryExtensionsTests
     {

@@ -1,7 +1,6 @@
-﻿using System;
-using System.Text;
+﻿using System.Text;
 
-namespace Nova3diLab.Utility
+namespace Nova3diLab
 {
     public static class StringExtensions
     {

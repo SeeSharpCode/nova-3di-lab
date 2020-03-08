@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Nova3diLab.Df2.Lod;
 
-namespace Nova3diLab.Utility
+namespace Nova3diLab.Df2.Lod
 {
     public static class VertexExtensions
     {
