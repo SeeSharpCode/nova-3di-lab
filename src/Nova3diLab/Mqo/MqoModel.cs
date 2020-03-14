@@ -25,7 +25,7 @@ namespace Nova3diLab.Mqo
             var vertexMatches = Regex.Matches(fileContent, @"\t\t(-?[\d.]+) (-?[\d.]+) (-?[\d.]+)");
             var vertices = vertexMatches.Cast<Match>().Select(match => match.ToMqoVertex()).ToList();
 
-            var faceMatches = Regex.Matches(fileContent, @"(\d) V\((\d+) (\d+) (\d+)\) M\((\d+)\) UV\(([\d.]+) ([\d.]+) ([\d.]+) ([\d.]+) ([\d.]+) ([\d.]+)\)");
+            var faceMatches = Regex.Matches(fileContent, @"V\((\d+) (\d+) (\d+)[\s\d]*\) M\((\d+)\) UV\(([\d.]+) ([\d.]+) ([\d.]+) ([\d.]+) ([\d.]+) ([\d.]+)[\s\d.]*\)");
             var faces = faceMatches.Cast<Match>().Select(match => match.ToMqoFace()).ToList();
 
             var textureMatches = Regex.Matches(fileContent, @"tex\(.{1}(.*).{1}\)");

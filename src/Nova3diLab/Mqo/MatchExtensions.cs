@@ -18,19 +18,21 @@ namespace Nova3diLab.Mqo
         {
             var vertexIndices = new List<int>
             {
+                Convert.ToInt32(match.Groups[1].Value),
                 Convert.ToInt32(match.Groups[2].Value),
-                Convert.ToInt32(match.Groups[3].Value),
-                Convert.ToInt32(match.Groups[4].Value)
+                Convert.ToInt32(match.Groups[3].Value)
             };
+
+            var materialIndex = Convert.ToInt32(match.Groups[4].Value);
 
             var uvCoordinates = new List<Tuple<double, double>>
             {
-                Tuple.Create(Convert.ToDouble(match.Groups[6].Value), Convert.ToDouble(match.Groups[7].Value)),
-                Tuple.Create(Convert.ToDouble(match.Groups[8].Value), Convert.ToDouble(match.Groups[9].Value)),
-                Tuple.Create(Convert.ToDouble(match.Groups[10].Value), Convert.ToDouble(match.Groups[11].Value)),
+                Tuple.Create(Convert.ToDouble(match.Groups[5].Value), Convert.ToDouble(match.Groups[6].Value)),
+                Tuple.Create(Convert.ToDouble(match.Groups[7].Value), Convert.ToDouble(match.Groups[8].Value)),
+                Tuple.Create(Convert.ToDouble(match.Groups[9].Value), Convert.ToDouble(match.Groups[10].Value)),
             };
 
-            return new MqoFace(vertexIndices, uvCoordinates, Convert.ToInt32(match.Groups[5].Value));
+            return new MqoFace(vertexIndices, uvCoordinates, materialIndex);
         }
     }
 }
