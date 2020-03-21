@@ -1,11 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace Nova3diLab.Mqo
 {
     internal static class MatchExtensions
     {
+        internal static MqoObject ToMqoObject(this Match match)
+        {
+            var objectContent = match.Value;
+
+            var vertexMatches = Regex.Matches(objectContent, @"\t\t(-?[\d.]+) (-?[\d.]+) (-?[\d.]+)");
+            var vertices = vertexMatches.Cast<Match>().Select(vertexMatch => vertexMatch.ToMqoVertex()).ToList();
+
+            var faceMatches = Regex.Matches(objectContent, @"V\((\d+) (\d+) (\d+)[\s\d]*\) M\((\d+)\) UV\(([\d.]+) ([\d.]+) ([\d.]+) ([\d.]+) ([\d.]+) ([\d.]+)[\s\d.]*\)");
+            var faces = faceMatches.Cast<Match>().Select(faceMatch => faceMatch.ToMqoFace()).ToList();
+
+            return new MqoObject(vertices, faces);
+        }
+
         internal static MqoVertex ToMqoVertex(this Match match)
         {
             var x = Convert.ToDouble(match.Groups[1].Value);

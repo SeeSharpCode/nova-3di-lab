@@ -8,18 +8,21 @@ namespace Nova3diLab.Mqo
 {
     public static class MqoTo3diConverter
     {
-        public static Model Convert(string name, MqoModel mqo, List<Texture> textures)
+        public static Model Convert(string name, MqoModel model, List<Texture> textures, MqoModel collision = null)
         {
-            var vertices = mqo.Vertices.Select(vertex => ConvertVertex(vertex)).ToList();
+            var modelObject = model.Objects[0];
+            var vertices = modelObject.Vertices.Select(vertex => ConvertVertex(vertex)).ToList();
 
             var faces = new List<Face>();
-            for (short i = 0; i < mqo.Faces.Count; i++)
+            for (short i = 0; i < modelObject.Faces.Count; i++)
             {
-                var face = mqo.Faces[i];
+                var face = modelObject.Faces[i];
                 faces.Add(ConvertFace(face, vertices, i));
             }
 
-            return new Model(name, textures, vertices, faces);
+            var collisionPlaneVectors = collision?.Objects.SelectMany(collisionObject => ConvertCollisionPlanes(collisionObject)).ToList();
+
+            return new Model(name, textures, vertices, faces, collisionPlaneVectors ?? new List<CollisionPlaneVector>(), new List<CollisionVolume>());
         }
 
         private static Vertex ConvertVertex(MqoVertex mqoVertex)
@@ -47,6 +50,20 @@ namespace Nova3diLab.Mqo
             };
 
             return new Face(index, uvCoordinates, vertices, mqoFace.MaterialIndex);
+        }
+
+        private static List<CollisionPlaneVector> ConvertCollisionPlanes(MqoObject collisionObject)
+        {
+            var vertices = collisionObject.Vertices.Select(vertex => ConvertVertex(vertex)).ToList();
+
+            var faces = new List<Face>();
+            for (short i = 0; i < collisionObject.Faces.Count; i++)
+            {
+                var face = collisionObject.Faces[i];
+                faces.Add(ConvertFace(face, vertices, i));
+            }
+
+            return faces.Select(face => face.CollisionPlaneVector).ToList();
         }
     }
 }

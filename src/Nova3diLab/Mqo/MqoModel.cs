@@ -7,14 +7,13 @@ namespace Nova3diLab.Mqo
 {
     public class MqoModel
     {
-        public List<MqoVertex> Vertices { get; }
-        public List<MqoFace> Faces { get; }
-        public List<string> TextureNames { get; }
+        public List<MqoObject> Objects { get; }
+        public List<string> TextureNames { get;  }
+        
 
-        public MqoModel(List<MqoVertex> vertices, List<MqoFace> faces, List<string> textureNames)
+        public MqoModel(List<MqoObject> objects, List<string> textureNames)
         {
-            Vertices = vertices;
-            Faces = faces;
+            Objects = objects;
             TextureNames = textureNames;
         }
 
@@ -22,16 +21,13 @@ namespace Nova3diLab.Mqo
         {
             string fileContent = File.ReadAllText(filePath);
 
-            var vertexMatches = Regex.Matches(fileContent, @"\t\t(-?[\d.]+) (-?[\d.]+) (-?[\d.]+)");
-            var vertices = vertexMatches.Cast<Match>().Select(match => match.ToMqoVertex()).ToList();
-
-            var faceMatches = Regex.Matches(fileContent, @"V\((\d+) (\d+) (\d+)[\s\d]*\) M\((\d+)\) UV\(([\d.]+) ([\d.]+) ([\d.]+) ([\d.]+) ([\d.]+) ([\d.]+)[\s\d.]*\)");
-            var faces = faceMatches.Cast<Match>().Select(match => match.ToMqoFace()).ToList();
+            var objectMatches = Regex.Matches(fileContent, @"Object(?:[^}]*[}]){3}");
+            var objects = objectMatches.Cast<Match>().Select(match => match.ToMqoObject()).ToList();
 
             var textureMatches = Regex.Matches(fileContent, @"tex\(.{1}(.*).{1}\)");
-            var textureNames = textureMatches.Cast<Match>().Select(match => match.Groups[1].Value).ToList();
+            var textureNames = textureMatches.Cast<Match>().Select(textureMatch => textureMatch.Groups[1].Value).ToList();
 
-            return new MqoModel(vertices, faces, textureNames);
+            return new MqoModel(objects, textureNames);
         }
     }
 }

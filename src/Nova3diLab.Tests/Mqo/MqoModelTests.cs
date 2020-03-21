@@ -11,17 +11,18 @@ namespace Nova3diLab.Tests.Mqo
         [Fact]
         public void LoadTest()
         {
-            var mqo = MqoModel.Load("Resources/box-object.mqo");
+            var model = MqoModel.Load("Resources/box-object.mqo");
+            var mqoObject = model.Objects[0];
 
-            Assert.Equal(8, mqo.Vertices.Count);
-            Assert.Equal(12, mqo.Faces.Count);
+            Assert.Equal(8, mqoObject.Vertices.Count);
+            Assert.Equal(12, mqoObject.Faces.Count);
 
-            var vertex = mqo.Vertices[0];
+            var vertex = mqoObject.Vertices[0];
             Assert.Equal(0, vertex.X);
             Assert.Equal(1, vertex.Y);
             Assert.Equal(-1, vertex.Z);
 
-            var face = mqo.Faces[0];
+            var face = mqoObject.Faces[0];
             Assert.Equal(0, face.MaterialIndex);
             Assert.True(new List<int> { 5, 4, 6 }.SequenceEqual(face.VertexIndices));
 
@@ -34,7 +35,7 @@ namespace Nova3diLab.Tests.Mqo
             Assert.True(expectedUVCoordinates.SequenceEqual(face.UVCoordinates));
 
             var expectedTextures = new List<string> { "Box.bmp" };
-            Assert.True(expectedTextures.SequenceEqual(mqo.TextureNames));
+            Assert.True(expectedTextures.SequenceEqual(model.TextureNames));
         }
     }
 }

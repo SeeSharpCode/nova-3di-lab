@@ -5,24 +5,21 @@ namespace Nova3diLab.Df2.Lod
 {
     public class Normal : IModelSerializable
     {
-        public short X { get; }
-        public short Y { get; }
-        public short Z { get; }
+        public Vertex Origin;
+        public double Magnitude { get;  }
         public short Shading { get; }
 
         public Normal(short x, short y, short z, short shading)
         {
-            X = x;
-            Y = y;
-            Z = z;
+            Origin = new Vertex(x, y, z);
             Shading = shading;
         }
 
         public void Serialize(BinaryWriter writer)
         {
-            writer.Write(X);
-            writer.Write(Y);
-            writer.Write(Z);
+            writer.Write(Origin.X);
+            writer.Write(Origin.Y);
+            writer.Write(Origin.Z);
             writer.Write(Shading);
         }
 
