@@ -5,24 +5,20 @@ namespace Nova3diLab.Df2.Lod
 {
     public class CollisionPlaneVector : IModelSerializable
     {
-        public short X { get; set; }
-        public short Z { get; set; }
-        public short Y { get; set; }
-        public short Distance { get; set; }
+        public Vertex Origin { get; }
+        public short Distance { get; }
 
         public CollisionPlaneVector(short x, short y, short z, short distance)
         {
-            X = x;
-            Y = y;
-            Z = z;
+            Origin = new Vertex(x, y, z);
             Distance = distance;
         }
 
         public void Serialize(BinaryWriter writer)
         {
-            writer.Write(X);
-            writer.Write(Y);
-            writer.Write(Z);
+            writer.Write(Origin.X);
+            writer.Write(Origin.Y);
+            writer.Write(Origin.Z);
             writer.Write(Distance);
         }
 
