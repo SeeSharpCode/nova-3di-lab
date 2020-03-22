@@ -1,17 +1,19 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace Nova3diLab.Df2.Lod
 {
-    public class Normal : IModelSerializable
+    public class Normal : Vector, IModelSerializable
     {
-        public Vertex Origin;
-        public double Magnitude { get;  }
         public short Shading { get; }
 
-        public Normal(short x, short y, short z, short shading)
+        public Normal(List<Vertex> vertices)
+            : base(vertices)
         {
-            Origin = new Vertex(x, y, z);
+            var absoluteMax = new List<short>() { Math.Abs(Origin.X), Math.Abs(Origin.Y), Math.Abs(Origin.Z) }.Max();
+            var shading = (short)(absoluteMax == Math.Abs(Origin.X) ? 4 : (absoluteMax == Math.Abs(Origin.Y)) ? 2 : 1);
             Shading = shading;
         }
 

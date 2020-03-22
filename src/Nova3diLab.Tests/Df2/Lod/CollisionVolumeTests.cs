@@ -7,7 +7,7 @@ namespace Nova3diLab.Tests.Df2.Lod
 {
     public class CollisionVolumeTests
     {
-        private static List<Vertex> vertices => new List<Vertex>
+        public static List<Vertex> Vertices => new List<Vertex>
         {
             new Vertex(0, 256, 0),
             new Vertex(0, 0, 256),
@@ -20,7 +20,7 @@ namespace Nova3diLab.Tests.Df2.Lod
         };
 
         public static CollisionVolume CollisionVolume =>
-            new CollisionVolume(CollisionVolumeType.Normal, vertices, 6);
+            new CollisionVolume(CollisionVolumeType.Normal, Vertices, 6);
 
         [Fact]
         public void SerializeTest()

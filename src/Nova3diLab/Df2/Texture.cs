@@ -5,13 +5,13 @@ namespace Nova3diLab.Df2
 {
     public class Texture : IModelSerializable
     {
-        public string Name { get; set; }
-        public string TransparentName { get; set; }
+        public string Name { get; }
+        public string TransparentName { get; }
         public int Size => Width * Height;
-        public short Index { get; set; }
-        public bool IsLightOn { get; set; }
-        public short Width { get; set; }
-        public short Height { get; set; }
+        public short Index { get; }
+        public bool IsLightOn { get; }
+        public short Width { get; }
+        public short Height { get; }
 
         public Texture(string name, short index, short width, short height)
         {

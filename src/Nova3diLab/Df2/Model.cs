@@ -6,9 +6,9 @@ namespace Nova3diLab.Df2
 {
     public class Model : IModelSerializable
     {
-        public ModelHeader Header { get; set; }
-        public List<Texture> Textures;
-        public List<ModelLod> Lods;
+        public ModelHeader Header { get; }
+        public List<Texture> Textures { get; }
+        public List<ModelLod> Lods { get; }
 
         public Model(string name, List<Texture> textures, List<Vertex> vertices, List<Face> faces)
             : this(name, textures, vertices, faces, new List<CollisionPlaneVector>(), new List<CollisionVolume>())

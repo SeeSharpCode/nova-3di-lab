@@ -5,15 +5,15 @@ namespace Nova3diLab.Df2
 {
     public class ModelHeader : IModelSerializable
     {
-        public string Name { get; set; }
-        public int LodCount { get; set; } = 1;
-        public int Lod4Distance { get; set; }
-        public int Lod3Distance { get; set; }
-        public int Lod2Distance { get; set; }
-        public int Lod1Distance { get; set; }
-        public string RenderType { get; set; } = "crng";
-        public double BoundingSphereRadius { get; set; }
-        public int TextureCount { get; set; }
+        public string Name { get; }
+        public int LodCount { get; } = 1;
+        public int Lod4Distance { get; }
+        public int Lod3Distance { get; }
+        public int Lod2Distance { get; }
+        public int Lod1Distance { get; }
+        public string RenderType { get; } = "crng";
+        public double BoundingSphereRadius { get; }
+        public int TextureCount { get; }
 
         public ModelHeader(string name, double boundingSphereRadius, int textureCount)
         {

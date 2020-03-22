@@ -18,16 +18,16 @@ namespace Nova3diLab.Df2.Lod
 
     public class Material : IModelSerializable
     {
-        public string Name { get; set; }
-        public byte SidesVisible { get; set; } = 1;
-        public bool IsTransparent { get; set; }
-        public MaterialType MaterialType { get; set; } = MaterialType.Stone;
-        public bool IsAnimated { get; set; }
-        public byte GreenBitmapIndex { get; set; }
-        public byte BrownBitmapIndex { get; set; }
-        public byte WhiteBitmapIndex { get; set; }
-        public byte AlphaBitmapIndex { get; set; }
-        public bool IsGlowing { get; set; }
+        public string Name { get; }
+        public byte SidesVisible { get; } = 1;
+        public bool IsTransparent { get; }
+        public MaterialType MaterialType { get; } = MaterialType.Stone;
+        public bool IsAnimated { get; }
+        public byte GreenBitmapIndex { get; }
+        public byte BrownBitmapIndex { get; }
+        public byte WhiteBitmapIndex { get; }
+        public byte AlphaBitmapIndex { get; }
+        public bool IsGlowing { get; }
 
         public Material(Texture texture)
         {

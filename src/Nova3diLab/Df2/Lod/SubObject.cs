@@ -8,8 +8,8 @@ namespace Nova3diLab.Df2.Lod
     {
         private List<Vertex> _vertices;
 
-        public int FacesCount { get; set; }
-        public int CollisionVolumesCount { get; set; }
+        public int FacesCount { get; }
+        public int CollisionVolumesCount { get; }
 
         public SubObject(List<Vertex> vertices, int facesCount, int collisionVolumeCount)
         {

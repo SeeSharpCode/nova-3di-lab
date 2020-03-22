@@ -7,7 +7,7 @@ namespace Nova3diLab.Mqo
     {
         public List<int> VertexIndices { get; }
         public List<Tuple<double, double>> UVCoordinates { get; }
-        public int MaterialIndex { get; set; }
+        public int MaterialIndex { get; }
 
         public MqoFace(List<int> vertexIndices, List<Tuple<double, double>> uvCoordinates, int materialIndex)
         {

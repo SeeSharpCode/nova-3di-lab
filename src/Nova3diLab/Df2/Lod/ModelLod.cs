@@ -7,15 +7,15 @@ namespace Nova3diLab.Df2.Lod
 {
     public class ModelLod : IModelSerializable
     {
-        public LodHeader Header { get; set; }
-        public List<Vertex> Vertices { get; set; }
-        public List<Normal> Normals { get; set; }
-        public List<Face> Faces { get; set; }
-        public List<SubObject> SubObjects { get; set; }
-        public List<PartAnimation> PartAnimations { get; set; }
-        public List<CollisionPlaneVector> CollisionPlaneVectors { get; set; }
-        public List<CollisionVolume> CollisionVolumes { get; set; }
-        public List<Material> Materials { get; set; }
+        public LodHeader Header { get; }
+        public List<Vertex> Vertices { get; }
+        public List<Normal> Normals { get; }
+        public List<Face> Faces { get; }
+        public List<SubObject> SubObjects { get; }
+        public List<PartAnimation> PartAnimations { get; }
+        public List<CollisionPlaneVector> CollisionPlaneVectors { get; }
+        public List<CollisionVolume> CollisionVolumes { get; }
+        public List<Material> Materials { get; }
 
         public ModelLod(List<Vertex> vertices, List<Face> faces, List<Texture> textures, List<CollisionPlaneVector> collisionPlanes, List<CollisionVolume> collisionVolumes)
         {
