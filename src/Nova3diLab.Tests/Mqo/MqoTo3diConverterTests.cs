@@ -30,7 +30,7 @@ namespace Nova3diLab.Tests.Mqo
         [Fact]
         public void LodHeaderTest()
         {
-            var expected = File.ReadAllBytes("Resources/lod-header-no-collision.3di");
+            var expected = File.ReadAllBytes("Resources/lod-header.3di");
             var model = Convert();
             var actual = TestUtils.SerializeToBytes(model.Lods[0].Header);
             Assert.True(expected.SequenceEqual(actual));
@@ -66,7 +66,7 @@ namespace Nova3diLab.Tests.Mqo
         [Fact]
         public void SubObjectTest()
         {
-            var expected = File.ReadAllBytes("Resources/sub-object-no-collision.3di");
+            var expected = File.ReadAllBytes("Resources/sub-object.3di");
             var model = Convert();
             var actual = model.Lods[0].SubObjects.SelectMany(subObject => TestUtils.SerializeToBytes(subObject)).ToArray();
             Assert.True(expected.SequenceEqual(actual));
@@ -106,7 +106,7 @@ namespace Nova3diLab.Tests.Mqo
         [Fact]
         public void ModelTest()
         {
-            var expected = File.ReadAllBytes("Resources/box-no-collision.3di");
+            var expected = File.ReadAllBytes("Resources/box.3di");
             var model = Convert();
             var actual = TestUtils.SerializeToBytes(model);
             Assert.True(expected.SequenceEqual(actual));
@@ -115,7 +115,8 @@ namespace Nova3diLab.Tests.Mqo
         private Model Convert()
         {
             var mqo = MqoModel.Load("Resources/box-object.mqo");
-            return MqoTo3diConverter.Convert("box", mqo, new List<Texture> { new Texture("box", 0, 512, 512) });
+            var collision = MqoModel.Load("Resources/box-collision.mqo");
+            return MqoTo3diConverter.Convert("box", mqo, new List<Texture> { new Texture("box", 0, 512, 512) }, collision);
         }
     }
 }
