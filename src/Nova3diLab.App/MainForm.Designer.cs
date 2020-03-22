@@ -38,6 +38,7 @@
             this.save3diButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.modelNameTextBox = new System.Windows.Forms.TextBox();
+            this.addCollisionButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.textureDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,7 +104,7 @@
             this.save3diButton.AutoSize = true;
             this.save3diButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.save3diButton.Enabled = false;
-            this.save3diButton.Location = new System.Drawing.Point(110, 15);
+            this.save3diButton.Location = new System.Drawing.Point(270, 310);
             this.save3diButton.Name = "save3diButton";
             this.save3diButton.Size = new System.Drawing.Size(70, 27);
             this.save3diButton.TabIndex = 3;
@@ -123,9 +124,24 @@
             // modelNameTextBox
             // 
             this.modelNameTextBox.Location = new System.Drawing.Point(15, 81);
+            this.modelNameTextBox.MaxLength = 8;
             this.modelNameTextBox.Name = "modelNameTextBox";
             this.modelNameTextBox.Size = new System.Drawing.Size(165, 25);
             this.modelNameTextBox.TabIndex = 5;
+            // 
+            // addCollisionButton
+            // 
+            this.addCollisionButton.AutoSize = true;
+            this.addCollisionButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.addCollisionButton.Enabled = false;
+            this.addCollisionButton.Location = new System.Drawing.Point(111, 15);
+            this.addCollisionButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.addCollisionButton.Name = "addCollisionButton";
+            this.addCollisionButton.Size = new System.Drawing.Size(95, 27);
+            this.addCollisionButton.TabIndex = 6;
+            this.addCollisionButton.Text = "Add Collision";
+            this.addCollisionButton.UseVisualStyleBackColor = true;
+            this.addCollisionButton.Click += new System.EventHandler(this.addCollisionButton_Click);
             // 
             // MainForm
             // 
@@ -133,7 +149,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(370, 335);
+            this.ClientSize = new System.Drawing.Size(360, 352);
+            this.Controls.Add(this.addCollisionButton);
             this.Controls.Add(this.modelNameTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.save3diButton);
@@ -162,6 +179,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TextureName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Width;
         private System.Windows.Forms.DataGridViewTextBoxColumn Height;
+        private System.Windows.Forms.Button addCollisionButton;
     }
 }
 

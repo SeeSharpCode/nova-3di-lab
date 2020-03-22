@@ -10,6 +10,7 @@ namespace Nova3diLab.App
     public partial class MainForm : Form
     {
         private MqoModel mqoModel;
+        private MqoModel collision;
 
         public MainForm()
         {
@@ -26,11 +27,25 @@ namespace Nova3diLab.App
                 }
 
                 mqoModel = MqoModel.Load(fileDialog.FileName);
-                modelNameTextBox.Text = Path.GetFileNameWithoutExtension(fileDialog.SafeFileName);
+                modelNameTextBox.Text = Path.GetFileNameWithoutExtension(fileDialog.SafeFileName).Substring(0, 8);
                 mqoModel.TextureNames.ForEach(texture =>
                     textureDataGrid.Rows.Add(new object[] { texture, 512, 512, false }));
 
+                addCollisionButton.Enabled = true;
                 save3diButton.Enabled = true;
+            }
+        }
+
+        private void addCollisionButton_Click(object sender, EventArgs e)
+        {
+            using (var fileDialog = new OpenFileDialog { Filter = "Metasequoia Files|*.mqo", Title = "Select collision .mqo file" })
+            {
+                if (fileDialog.ShowDialog() != DialogResult.OK)
+                {
+                    return;
+                }
+
+                collision = MqoModel.Load(fileDialog.FileName);
             }
         }
 
@@ -54,7 +69,7 @@ namespace Nova3diLab.App
                     textures.Add(new Texture(name, i, width, height));
                 }
 
-                var df2Model = MqoTo3diConverter.Convert(modelNameTextBox.Text, mqoModel, textures);
+                var df2Model = MqoTo3diConverter.Convert(modelNameTextBox.Text, mqoModel, textures, collision);
                 df2Model.SaveToFile(fileDialog.FileName);
 
                 MessageBox.Show("3di saved sucessfully!", "Success");
