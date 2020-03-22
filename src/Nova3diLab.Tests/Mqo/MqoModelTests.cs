@@ -6,7 +6,7 @@ using Xunit;
 
 namespace Nova3diLab.Tests.Mqo
 {
-    public class MqoObjectTests
+    public class MqoModelTests
     {
         [Fact]
         public void LoadTest()

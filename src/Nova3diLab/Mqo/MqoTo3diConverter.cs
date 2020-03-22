@@ -20,9 +20,20 @@ namespace Nova3diLab.Mqo
                 faces.Add(ConvertFace(face, vertices, i));
             }
 
-            var collisionPlaneVectors = collision?.Objects.SelectMany(collisionObject => ConvertCollisionPlanes(collisionObject)).ToList();
+            var collisionPlaneVectors = new List<CollisionPlaneVector>();
+            var collisionVolumes = new List<CollisionVolume>();
+            if (collision != null)
+            {
+                foreach (var collisionObject in collision.Objects)
+                {
+                    var objectVectors = ConvertCollisionPlanes(collisionObject);
+                    collisionPlaneVectors.AddRange(objectVectors);
+                    var objectVolume = ConvertCollisionVolume(collisionObject, objectVectors.Count);
+                    collisionVolumes.Add(objectVolume);
+                }
+            }
 
-            return new Model(name, textures, vertices, faces, collisionPlaneVectors ?? new List<CollisionPlaneVector>(), new List<CollisionVolume>());
+            return new Model(name, textures, vertices, faces, collisionPlaneVectors, collisionVolumes);
         }
 
         private static Vertex ConvertVertex(MqoVertex mqoVertex)
@@ -64,6 +75,12 @@ namespace Nova3diLab.Mqo
             }
 
             return faces.Select(face => face.CollisionPlaneVector).ToList();
+        }
+
+        private static CollisionVolume ConvertCollisionVolume(MqoObject collisionObject, int collisionPlaneCount)
+        {
+            var df2Vertices = collisionObject.Vertices.Select(vertex => ConvertVertex(vertex)).ToList();
+            return new CollisionVolume(CollisionVolumeType.Normal, df2Vertices, collisionPlaneCount);
         }
     }
 }

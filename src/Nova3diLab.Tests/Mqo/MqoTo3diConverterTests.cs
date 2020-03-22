@@ -82,6 +82,28 @@ namespace Nova3diLab.Tests.Mqo
         }
 
         [Fact]
+        public void CollisionPlanesTest()
+        {
+            var mqo = MqoModel.Load("Resources/box-object.mqo");
+            var collision = MqoModel.Load("Resources/box-collision.mqo");
+            var df2 = MqoTo3diConverter.Convert("box", mqo, new List<Texture> { new Texture("box", 0, 512, 512) }, collision);
+            var expected = File.ReadAllBytes("Resources/collision-planes.3di");
+            var actual = df2.Lods[0].CollisionPlaneVectors.SelectMany(collisionPlane => TestUtils.SerializeToBytes(collisionPlane)).ToArray();
+            Assert.True(expected.SequenceEqual(actual));
+        }
+
+        [Fact]
+        public void CollisionVolumesTest()
+        {
+            var mqo = MqoModel.Load("Resources/box-object.mqo");
+            var collision = MqoModel.Load("Resources/box-collision.mqo");
+            var df2 = MqoTo3diConverter.Convert("box", mqo, new List<Texture> { new Texture("box", 0, 512, 512) }, collision);
+            var expected = File.ReadAllBytes("Resources/collision-volume.3di");
+            var actual = df2.Lods[0].CollisionVolumes.SelectMany(volume => TestUtils.SerializeToBytes(volume)).ToArray();
+            Assert.True(expected.SequenceEqual(actual));
+        }
+
+        [Fact]
         public void ModelTest()
         {
             var expected = File.ReadAllBytes("Resources/box-no-collision.3di");

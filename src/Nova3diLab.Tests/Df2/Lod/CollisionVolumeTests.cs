@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.IO;
 using Nova3diLab.Df2.Lod;
 using Xunit;
@@ -6,20 +7,21 @@ namespace Nova3diLab.Tests.Df2.Lod
 {
     public class CollisionVolumeTests
     {
-        public static CollisionVolume CollisionVolume => new CollisionVolume
+        private static List<Vertex> vertices => new List<Vertex>
         {
-            VolumeType = CollisionVolumeType.Normal,
-            BoundingSphereRadius = .866025403784439,
-            BoundingCircleRadius = .707106781186548,
-            XMin = 0,
-            XMax = 1,
-            YMin = 0,
-            YMax = 1,
-            ZMin = 0,
-            ZMax = 1,
-            CollisionPlaneCount = 6,
+            new Vertex(0, 256, 0),
+            new Vertex(0, 0, 256),
+            new Vertex(0, 256, 256),
+            new Vertex(256, 256, 256),
+            new Vertex(256, 256, 0),
+            new Vertex(256, 0, 0),
+            new Vertex(0, 0, 0),
+            new Vertex(256, 0, 256)
         };
-        
+
+        public static CollisionVolume CollisionVolume =>
+            new CollisionVolume(CollisionVolumeType.Normal, vertices, 6);
+
         [Fact]
         public void SerializeTest()
         {
