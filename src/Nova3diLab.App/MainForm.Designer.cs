@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.loadMqoButton = new System.Windows.Forms.Button();
             this.textureDataGrid = new System.Windows.Forms.DataGridView();
@@ -39,7 +40,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.modelNameTextBox = new System.Windows.Forms.TextBox();
             this.addCollisionButton = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.modelInfoTable = new System.Windows.Forms.DataGridView();
+            this.nameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.countColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.textureDataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modelInfoTable)).BeginInit();
             this.SuspendLayout();
             // 
             // loadMqoButton
@@ -65,10 +71,10 @@
             this.TextureName,
             this.Width,
             this.Height});
-            this.textureDataGrid.Location = new System.Drawing.Point(11, 145);
+            this.textureDataGrid.Location = new System.Drawing.Point(15, 312);
             this.textureDataGrid.Name = "textureDataGrid";
             this.textureDataGrid.RowHeadersVisible = false;
-            this.textureDataGrid.Size = new System.Drawing.Size(329, 159);
+            this.textureDataGrid.Size = new System.Drawing.Size(329, 157);
             this.textureDataGrid.TabIndex = 1;
             // 
             // TextureName
@@ -93,7 +99,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 121);
+            this.label1.Location = new System.Drawing.Point(11, 289);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 20);
             this.label1.TabIndex = 2;
@@ -104,7 +110,7 @@
             this.save3diButton.AutoSize = true;
             this.save3diButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.save3diButton.Enabled = false;
-            this.save3diButton.Location = new System.Drawing.Point(270, 310);
+            this.save3diButton.Location = new System.Drawing.Point(274, 475);
             this.save3diButton.Name = "save3diButton";
             this.save3diButton.Size = new System.Drawing.Size(70, 27);
             this.save3diButton.TabIndex = 3;
@@ -126,7 +132,7 @@
             this.modelNameTextBox.Location = new System.Drawing.Point(15, 81);
             this.modelNameTextBox.MaxLength = 8;
             this.modelNameTextBox.Name = "modelNameTextBox";
-            this.modelNameTextBox.Size = new System.Drawing.Size(165, 25);
+            this.modelNameTextBox.Size = new System.Drawing.Size(108, 25);
             this.modelNameTextBox.TabIndex = 5;
             // 
             // addCollisionButton
@@ -134,7 +140,7 @@
             this.addCollisionButton.AutoSize = true;
             this.addCollisionButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.addCollisionButton.Enabled = false;
-            this.addCollisionButton.Location = new System.Drawing.Point(111, 15);
+            this.addCollisionButton.Location = new System.Drawing.Point(111, 14);
             this.addCollisionButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.addCollisionButton.Name = "addCollisionButton";
             this.addCollisionButton.Size = new System.Drawing.Size(95, 27);
@@ -143,13 +149,70 @@
             this.addCollisionButton.UseVisualStyleBackColor = true;
             this.addCollisionButton.Click += new System.EventHandler(this.addCollisionButton_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(12, 119);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(94, 20);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Model Info";
+            // 
+            // modelInfoTable
+            // 
+            this.modelInfoTable.AllowUserToAddRows = false;
+            this.modelInfoTable.AllowUserToDeleteRows = false;
+            this.modelInfoTable.AllowUserToResizeRows = false;
+            this.modelInfoTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.modelInfoTable.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.modelInfoTable.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.modelInfoTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.modelInfoTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.modelInfoTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.modelInfoTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.modelInfoTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nameColumn,
+            this.countColumn});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.modelInfoTable.DefaultCellStyle = dataGridViewCellStyle1;
+            this.modelInfoTable.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.modelInfoTable.Location = new System.Drawing.Point(16, 142);
+            this.modelInfoTable.Name = "modelInfoTable";
+            this.modelInfoTable.ReadOnly = true;
+            this.modelInfoTable.RowHeadersVisible = false;
+            this.modelInfoTable.Size = new System.Drawing.Size(157, 144);
+            this.modelInfoTable.TabIndex = 7;
+            // 
+            // nameColumn
+            // 
+            this.nameColumn.HeaderText = "Property";
+            this.nameColumn.Name = "nameColumn";
+            this.nameColumn.ReadOnly = true;
+            this.nameColumn.Width = 83;
+            // 
+            // countColumn
+            // 
+            this.countColumn.HeaderText = "Count";
+            this.countColumn.Name = "countColumn";
+            this.countColumn.ReadOnly = true;
+            this.countColumn.Width = 67;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(360, 352);
+            this.ClientSize = new System.Drawing.Size(360, 514);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.modelInfoTable);
             this.Controls.Add(this.addCollisionButton);
             this.Controls.Add(this.modelNameTextBox);
             this.Controls.Add(this.label2);
@@ -163,6 +226,7 @@
             this.Name = "MainForm";
             this.Text = "Nova 3di Lab";
             ((System.ComponentModel.ISupportInitialize)(this.textureDataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modelInfoTable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,6 +244,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Width;
         private System.Windows.Forms.DataGridViewTextBoxColumn Height;
         private System.Windows.Forms.Button addCollisionButton;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView modelInfoTable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn countColumn;
     }
 }
 

@@ -27,9 +27,15 @@ namespace Nova3diLab.App
                 }
 
                 mqoModel = MqoModel.Load(fileDialog.FileName);
-                modelNameTextBox.Text = Path.GetFileNameWithoutExtension(fileDialog.SafeFileName).Substring(0, 8);
+
+                var modelName = Path.GetFileNameWithoutExtension(fileDialog.SafeFileName);
+                modelNameTextBox.Text = modelName.Length > 8 ? modelName.Substring(0, 8) : modelName;
+
                 mqoModel.TextureNames.ForEach(texture =>
                     textureDataGrid.Rows.Add(new object[] { texture, 512, 512, false }));
+
+                modelInfoTable.Rows.Add("Vertices", mqoModel.Objects[0].Vertices.Count);
+                modelInfoTable.Rows.Add("Faces", mqoModel.Objects[0].Faces.Count);
 
                 addCollisionButton.Enabled = true;
                 save3diButton.Enabled = true;
