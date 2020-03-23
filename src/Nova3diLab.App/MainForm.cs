@@ -3,6 +3,7 @@ using Nova3diLab.Mqo;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Nova3diLab.App
@@ -32,13 +33,20 @@ namespace Nova3diLab.App
                 modelNameTextBox.Text = modelName.Length > 8 ? modelName.Substring(0, 8) : modelName;
 
                 mqoModel.TextureNames.ForEach(texture =>
-                    textureDataGrid.Rows.Add(new object[] { texture, 512, 512, false }));
+                    textureDataGrid.Rows.Add(new object[] { texture, "Stone", 512, 512, false }));
 
-                modelInfoTable.Rows.Add("Vertices", mqoModel.Objects[0].Vertices.Count);
-                modelInfoTable.Rows.Add("Faces", mqoModel.Objects[0].Faces.Count);
-
+                namePanel.Visible = true;
+                placeholderContentLabel.Visible = false;
+                texturePanel.Visible = true;
                 addCollisionButton.Enabled = true;
                 save3diButton.Enabled = true;
+                placeholderLabel.Visible = false;
+                vertexCountLabel.Visible = true;
+                faceCountLabel.Visible = true;
+
+                var mqoObject = mqoModel.Objects[0];
+                vertexCountLabel.Text = $"Vertices: {mqoObject.Vertices.Count}";
+                faceCountLabel.Text = $"Faces: {mqoObject.Faces.Count}";
             }
         }
 
@@ -52,6 +60,12 @@ namespace Nova3diLab.App
                 }
 
                 collision = MqoModel.Load(fileDialog.FileName);
+
+                collisionPlaneCountLabel.Visible = true;
+                collisionVolumeLabel.Visible = true;
+
+                collisionPlaneCountLabel.Text = $"CPs: {collision.Objects.SelectMany(obj => obj.Faces).Count()}";
+                collisionVolumeLabel.Text = $"CVs: {collision.Objects.Count}";
             }
         }
 
