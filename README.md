@@ -8,4 +8,4 @@ Delta Force 2 is currently the only supported game.
 
 The desktop app allows you to convert metasequoia (.mqo) files to Delta Force 2 models.
 
-![app](app-snip.png)
+![app](app-snip.PNG)
